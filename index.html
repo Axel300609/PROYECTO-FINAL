@@ -1,1 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Académico - Axel Arias</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* BARRA DE NAVEGACIÓN SUPERIOR */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        main {
+            flex: 1;
+            max-width: 1100px;
+            width: 90%;
+            margin: 2rem auto;
+        }
+
+        /* VISTA DE PORTADA */
+        .portada-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .perfil-foto {
+            width: 100%;
+            max-width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .bio-info h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .bio-datos p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        /* SECCIÓN INFERIOR IZQUIERDA: CALIFICACIONES */
+        .calificaciones-seccion {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #eee;
+            grid-column: 1 / -1;
+        }
+
+        .calificaciones-seccion h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .calificacion-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .estrellas {
+            color: #f1c40f;
+            letter-spacing: 2px;
+        }
+
+        /* VISTAS DE LAS UNIDADES */
+        .unidad-view {
+            display: none; /* Oculto por defecto */
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .subtemas-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .subtemas-lista {
+            list-style: none;
+            border-right: 2px solid #eee;
+            padding-right: 1rem;
+        }
+
+        .subtema-btn {
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: all 0.2s;
+        }
+
+        .subtema-btn:hover, .subtema-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .concepto-box {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN SUPERIOR DERECHA -->
+    <header>
+        <div class="logo" onclick="mostrarSeccion('portada')">Inicio</div>
+        <nav>
+            <ul>
+                <li><a onclick="mostrarSeccion('unidad1')">UNIDAD 1</a></li>
+                <li><a onclick="mostrarSeccion('unidad2')">UNIDAD 2</a></li>
+                <li><a onclick="mostrarSeccion('unidad3')">UNIDAD 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: PORTADA PRINCIPAL -->
+        <section id="portada" class="portada-container">
+            <div class="foto-columna">
+                <!-- Reemplaza mi-foto.jpg por la ruta de tu foto -->
+                <img src="https://via.placeholder.com/250" alt="Foto de Axel Arias" class="perfil-foto">
+            </div>
+
+            <div class="bio-info">
+                <h1>Axel Arias</h1>
+                <div class="bio-datos">
+                    <p><strong>Ocupación:</strong> Estudiante de la UTC</p>
+                    <p><strong>Ubicación:</strong> Quito-Pichincha</p>
+                    <p><strong>Edad:</strong> 19 años</p>
+                    <p style="margin-top: 1rem; color: #666;">
+                        Bienvenido a mi portafolio académico. Utiliza el menú de la esquina superior derecha para explorar los temas y conceptos desarrollados en cada unidad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ABAJO A LA IZQUIERDA: UNIDADES Y ESTRELLAS -->
+            <div class="calificaciones-seccion">
+                <h3>Progreso / Calificaciones por Unidad</h3>
+                
+                <div class="calificacion-item">
+                    <strong>UNIDAD 1:</strong>
+                    <span class="estrellas">★★★★☆</span>
+                    <span>(4/5)</span>
+                </div>
+
+                <div class="calificacion-item">
+                    <strong>UNIDAD 2:</strong>
+                    <span class="estrellas">★★★☆☆</span>
+                    <span>(3/5)</span>
+                </div>
+
+                <div class="calificacion-item">
+                    <strong>UNIDAD 3:</strong>
+                    <span class="estrellas">★★☆☆☆</span>
+                    <span>(2/5)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: UNIDAD 1 -->
+        <section id="unidad1" class="unidad-view">
+            <h2>UNIDAD 1: Introducción a la Programación</h2>
+            <div class="subtemas-grid">
+                <ul class="subtemas-lista">
+                    <li><button class="subtema-btn active" onclick="mostrarConcepto('u1', 1, this)">1.1 Variables y Tipos</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u1', 2, this)">1.2 Condicionales</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u1', 3, this)">1.3 Bucles (Ciclos)</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u1', 4, this)">1.4 Funciones</button></li>
+                </ul>
+                <div id="u1-concepto" class="concepto-box">
+                    <!-- Se llena con JavaScript -->
+                </div>
+            </div>
+            <div class="btn-volver" onclick="mostrarSeccion('portada')">← Volver a la Portada</div>
+        </section>
+
+        <!-- SECCIÓN 3: UNIDAD 2 -->
+        <section id="unidad2" class="unidad-view">
+            <h2>UNIDAD 2: Estructuras de Datos</h2>
+            <div class="subtemas-grid">
+                <ul class="subtemas-lista">
+                    <li><button class="subtema-btn active" onclick="mostrarConcepto('u2', 1, this)">2.1 Arreglos y Listas</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u2', 2, this)">2.2 Matices</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u2', 3, this)">2.3 Pilas y Colas</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u2', 4, this)">2.4 Diccionarios</button></li>
+                </ul>
+                <div id="u2-concepto" class="concepto-box">
+                    <!-- Se llena con JavaScript -->
+                </div>
+            </div>
+            <div class="btn-volver" onclick="mostrarSeccion('portada')">← Volver a la Portada</div>
+        </section>
+
+        <!-- SECCIÓN 4: UNIDAD 3 -->
+        <section id="unidad3" class="unidad-view">
+            <h2>UNIDAD 3: Programación Orientada a Objetos</h2>
+            <div class="subtemas-grid">
+                <ul class="subtemas-lista">
+                    <li><button class="subtema-btn active" onclick="mostrarConcepto('u3', 1, this)">3.1 Clases y Objetos</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u3', 2, this)">3.2 Encapsulamiento</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u3', 3, this)">3.3 Herencia</button></li>
+                    <li><button class="subtema-btn" onclick="mostrarConcepto('u3', 4, this)">3.4 Polimorfismo</button></li>
+                </ul>
+                <div id="u3-concepto" class="concepto-box">
+                    <!-- Se llena con JavaScript -->
+                </div>
+            </div>
+            <div class="btn-volver" onclick="mostrarSeccion('portada')">← Volver a la Portada</div>
+        </section>
+    </main>
+
+    <!-- SCRIPT PARA MANEJAR EL CAMBIO DE VISTAS Y CONTENIDO -->
+    <script>
+        // Base de datos de contenidos por subtema (Puedes editar los textos aquí)
+        const contenidos = {
+            u1: {
+                1: { titulo: "1.1 Variables y Tipos de Datos", texto: "Una variable es un espacio en memoria para almacenar información.", ejemplo: "Ejemplo: let nombre = 'Axel';" },
+                2: { titulo: "1.2 Condicionales", texto: "Permiten tomar decisiones dentro del código según se cumpla una condición.", ejemplo: "Ejemplo: if (edad >= 18) { ... }" },
+                3: { titulo: "1.3 Bucles (Ciclos)", texto: "Repiten un bloque de código mientras una condición sea verdadera.", ejemplo: "Ejemplo: for(let i=0; i<10; i++)" },
+                4: { titulo: "1.4 Funciones", texto: "Bloques de código reutilizables que realizan una tarea específica.", ejemplo: "Ejemplo: function saludar() { return 'Hola'; }" }
+            },
+            u2: {
+                1: { titulo: "2.1 Arreglos y Listas", texto: "Estructuras que almacenan múltiples elementos en una sola variable.", ejemplo: "Ejemplo: let notas = [10, 8, 9];" },
+                2: { titulo: "2.2 Matrices", texto: "Estructuras bidimensionales organizadas en filas y columnas.", ejemplo: "Ejemplo: let matriz = [[1, 2], [3, 4]];" },
+                3: { titulo: "2.3 Pilas y Colas", texto: "Pilas manejan orden LIFO (último en entrar, primero en salir) y Colas FIFO.", ejemplo: "Ejemplo: Pila -> Deshacer cambios; Cola -> Impresora." },
+                4: { titulo: "2.4 Diccionarios / Objetos", texto: "Almacenan datos en pares clave-valor.", ejemplo: "Ejemplo: { nombre: 'Axel', edad: 19 }" }
+            },
+            u3: {
+                1: { titulo: "3.1 Clases y Objetos", texto: "Una clase es una plantilla; el objeto es la instancia basada en esa plantilla.", ejemplo: "Ejemplo: class Estudiante { constructor(nombre) { ... } }" },
+                2: { titulo: "3.2 Encapsulamiento", texto: "Ocultar detalles internos de un objeto y exponer solo lo necesario.", ejemplo: "Ejemplo: Atributos privados (#edad)." },
+                3: { titulo: "3.3 Herencia", texto: "Mecanismo por el cual una clase adquiere propiedades de otra.", ejemplo: "Ejemplo: class Estudiante extends Persona" },
+                4: { titulo: "3.4 Polimorfismo", texto: "Habilidad de responder de manera distinta a un mismo método.", ejemplo: "Ejemplo: Un método 'dibujar()' actúa diferente según la figura." }
+            }
+        };
+
+        // Función para cambiar de pantalla (Portada / Unidad 1 / Unidad 2 / Unidad 3)
+        function mostrarSeccion(idSeccion) {
+            // Ocultar todas las vistas
+            document.querySelectorAll('main > section').forEach(sec => {
+                sec.style.display = 'none';
+            });
+            // Mostrar la seleccionada
+            const seccion = document.getElementById(idSeccion);
+            if(seccion) {
+                seccion.style.display = (idSeccion === 'portada') ? 'grid' : 'block';
+            }
+
+            // Si es una unidad, cargar el primer subtema por defecto
+            if(idSeccion === 'unidad1') mostrarConcepto('u1', 1);
+            if(idSeccion === 'unidad2') mostrarConcepto('u2', 1);
+            if(idSeccion === 'unidad3') mostrarConcepto('u3', 1);
+        }
+
+        // Función para cambiar el concepto mostrado al hacer clic en un subtema
+        function mostrarConcepto(unidad, idSubtema, elementoBtn = null) {
+            const data = contenidos[unidad][idSubtema];
+            const contenedor = document.getElementById(`${unidad}-concepto`);
+            
+            contenedor.innerHTML = `
+                <h3>${data.titulo}</h3>
+                <p style="margin: 1rem 0;">${data.texto}</p>
+                <p><strong>Ejemplo:</strong></p>
+                <code style="background: #e9ecef; padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-block;">${data.ejemplo}</code>
+            `;
+
+            // Resaltar botón activo
+            if(elementoBtn) {
+                const listaBtns = elementoBtn.parentElement.parentElement.querySelectorAll('.subtema-btn');
+                listaBtns.forEach(btn => btn.classList.remove('active'));
+                elementoBtn.classList.add('active');
+            }
+        }
+
+        // Iniciar en la portada
+        mostrarSeccion('portada');
+    </script>
+</body>
+</html>
