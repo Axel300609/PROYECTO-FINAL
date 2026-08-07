@@ -128,19 +128,7 @@
         .titulo-universidad .u-tecnica{ color: #FFFFFF; padding-right:6px; }
         .titulo-universidad .u-cotopaxi{ color: var(--neon-rojo); }
 
-        /* Logo de la universidad alineado a la derecha */
-        .logo-universidad {
-            width:120px;
-            height:120px;
-            object-fit:contain;
-            flex-shrink:0;
-            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
-        }
-
         .subtitle{ font-weight:800; opacity:0.85; font-size:0.98rem; letter-spacing:0.6px; text-transform:uppercase; }
-
-        /* Header actions - ahora vacío pero se mantiene para estructura */
-        .header-actions{ margin-left:auto; display:flex; gap:12px; align-items:center; }
 
         /* ===== TARJETA DE INFORMACIÓN PERSONAL =====
            - etiquetas en verde neón
@@ -227,12 +215,10 @@
             .titulo-universidad h1{ font-size:1.6rem; white-space:normal; } /* allow wrap on small screens to avoid overflow */
             header{ flex-direction:column; align-items:center; text-align:center; gap:12px; padding:20px; }
             .foto-perfil{ width:140px; height:140px; font-size:44px; }
-            .logo-universidad{ width:100px; height:100px; }
             .info-estudiante .label{ min-width:110px; }
         }
         @media (max-width:520px){
             .foto-perfil{ width:120px; height:120px; font-size:36px; }
-            .logo-universidad{ width:80px; height:80px; }
             .info-estudiante p{ font-size:0.92rem }
         }
     </style>
@@ -258,10 +244,6 @@
                     </h1>
                 </div>
                 <div class="subtitle">INGENIERÍA EN SOFTWARE - NIVELACIÓN</div>
-            </div>
-
-            <div class="header-actions">
-                <img src="https://universidades.ec/universidades/universidad-tecnica-de-cotopaxi" alt="Logo Universidad Técnica de Cotopaxi" class="logo-universidad" />
             </div>
         </header>
 
