@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unidad 1 - Estructura y Funcionamiento del Computador</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>UNIDAD 1 - ESTRUCTURA Y FUNCIONAMIENTO DEL COMPUTADOR</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --fondo-oscuro: #121212;
@@ -12,10 +16,17 @@
             --color-acento: #00e676;
             --color-hover: #00c853;
             --borde: #333;
+            --gold: #FFD700;
+            --gold-dark: #D4AF37;
+        }
+
+        /* Tipografía base */
+        html, body {
+            height: 100%;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--fondo-oscuro);
             color: var(--texto-principal);
             margin: 0;
@@ -23,6 +34,8 @@
             display: flex;
             justify-content: center;
             min-height: 100vh;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
         }
 
         main {
@@ -34,66 +47,82 @@
             gap: 30px;
         }
 
+        /* Encabezado */
         header {
             background-color: var(--fondo-tarjeta);
             padding: 30px;
             border-radius: 15px;
             border: 1px solid var(--borde);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 22px rgba(0,0,0,0.6);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.8rem;
-            color: var(--color-acento);
+            font-size: 1.9rem;
+            color: var(--texto-principal);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase; /* TITULOS EN MAYÚSCULAS */
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        /* Botón regresar con degradado dorado y texto en MAYÚSCULAS */
         .btn-volver {
-            background-color: var(--color-acento);
-            color: #000;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
             display: inline-block;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 28px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase; /* TEXTO EN MAYÚSCULAS */
+            color: #000; /* texto negro sobre dorado */
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            box-shadow: 0 8px 30px rgba(212,175,55,0.18), 0 2px 6px rgba(0,0,0,0.6);
+            border: 1px solid rgba(0,0,0,0.25);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
         }
 
         .btn-volver:hover {
-            background-color: var(--color-hover);
-            transform: scale(1.05);
+            transform: translateY(-4px) scale(1.02);
+            filter: brightness(1.03);
+            box-shadow: 0 14px 40px rgba(212,175,55,0.22);
         }
 
+        /* Contenido principal */
         .contenido {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 22px;
         }
 
         .tema {
             background-color: var(--fondo-tarjeta);
-            padding: 25px;
-            border-radius: 15px;
+            padding: 24px;
+            border-radius: 14px;
             border: 1px solid var(--borde);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            transition: all 0.28s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.45);
         }
 
         .tema:hover {
             border-color: var(--color-acento);
-            box-shadow: 0 8px 24px rgba(0,230,118,0.12);
-            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,230,118,0.06);
+            transform: translateY(-6px);
         }
 
         .tema h2 {
+            margin: 0 0 12px 0;
+            font-size: 1.25rem;
             color: var(--color-acento);
-            margin: 0 0 15px 0;
-            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase; /* TITULOS EN MAYÚSCULAS */
             display: flex;
             align-items: center;
             gap: 10px;
@@ -101,27 +130,53 @@
 
         .tema p {
             margin: 0;
-            line-height: 1.6;
-            opacity: 0.9;
+            line-height: 1.65;
+            opacity: 0.95;
+            font-weight: 400;
+            color: var(--texto-principal);
+        }
+
+        /* Ejemplo resaltado dentro de cada tema */
+        .ejemplo {
+            margin-top: 12px;
+            background: rgba(255,255,255,0.02);
+            padding: 12px 14px;
+            border-left: 4px solid var(--color-acento);
+            border-radius: 8px;
+            font-size: 0.98rem;
+            color: var(--texto-principal);
+        }
+
+        .ejemplo strong {
+            display: inline-block;
+            margin-right: 6px;
+            color: var(--texto-principal);
+            font-weight: 700;
         }
 
         footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 20px;
+            margin-top: 18px;
+            padding: 18px;
             border-top: 1px solid var(--borde);
-            opacity: 0.8;
+            opacity: 0.85;
+            font-size: 0.95rem;
         }
 
+        /* Responsive */
         @media (max-width: 700px) {
             header {
                 flex-direction: column;
-                gap: 20px;
+                gap: 18px;
                 text-align: center;
             }
 
             header h1 {
-                font-size: 1.4rem;
+                font-size: 1.35rem;
+            }
+
+            .tema h2 {
+                font-size: 1.05rem;
             }
         }
     </style>
@@ -129,34 +184,49 @@
 <body>
     <main>
         <header>
-            <h1>💻 Unidad 1: Estructura y Funcionamiento del Computador</h1>
-            <a href="index.html" class="btn-volver">← Regresar al inicio</a>
+            <h1>💻 UNIDAD 1: ESTRUCTURA Y FUNCIONAMIENTO DEL COMPUTADOR</h1>
+            <a href="index.html" class="btn-volver" aria-label="Regresar al inicio">← REGRESAR AL INICIO</a>
         </header>
 
         <section class="contenido">
-            <div class="tema">
-                <h2>🏗️ Modelo de Von Neumann y Harvard</h2>
-                <p>Arquitecturas de diseño para computadoras. El modelo de Von Neumann emplea una única memoria para almacenar tanto datos como instrucciones del programa, mientras que la arquitectura Harvard utiliza memorias y buses físicamente independientes para datos e instrucciones. Esta última mejora el rendimiento al permitir acceso simultáneo a datos e instrucciones, siendo especialmente utilizada en procesadores embebidos y sistemas de tiempo real.</p>
+            <div class="tema" id="modelo-von-neumann-harvard">
+                <h2>🏗️ MODELO DE VON NEUMANN Y HARVARD</h2>
+                <p>
+                    Arquitecturas de diseño para computadoras. El modelo de Von Neumann emplea una única memoria para almacenar tanto datos como instrucciones del programa, lo que implica que la CPU accede a ellas por el mismo canal. La arquitectura Harvard utiliza memorias separadas para instrucciones y datos, permitiendo accesos simultáneos y frecuentemente usada en microcontroladores.
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> En el modelo Von Neumann, si la CPU necesita leer una instrucción y un dato, debe hacerlo uno por uno a través del mismo canal; en Harvard (utilizada en microcontroladores como Arduino), la CPU puede leer la instrucción y el dato al mismo tiempo usando canales separados.</div>
             </div>
 
-            <div class="tema">
-                <h2>⚙️ Sistemas Operativos</h2>
-                <p>Software principal que administra y coordina los recursos de hardware del computador (procesador, memoria, almacenamiento y periféricos), sirviendo como plataforma de ejecución para las aplicaciones de usuario. El sistema operativo proporciona una interfaz amigable entre el usuario y el hardware, gestionando tareas como la asignación de recursos, la seguridad, la multitarea y el manejo de dispositivos periféricos.</p>
+            <div class="tema" id="sistemas-operativos">
+                <h2>⚙️ SISTEMAS OPERATIVOS</h2>
+                <p>
+                    Software principal que administra y coordina los recursos de hardware del computador (procesador, memoria, almacenamiento y periféricos). Proporciona servicios para la ejecución de aplicaciones, gestión de procesos, planificación, seguridad y manejo de archivos.
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Windows o macOS administrando la memoria RAM y el procesador cuando abres al mismo tiempo un navegador web y un reproductor de música; el sistema operativo asigna tiempo de CPU y memoria a cada aplicación y evita conflictos.</div>
             </div>
 
-            <div class="tema">
-                <h2>🔢 Sistemas de Numeración y Conversiones (Binario, Octal y Hexadecimal)</h2>
-                <p>Sistemas de representación numérica basados en distintas bases. El sistema binario (base 2) es utilizado por los circuitos del procesador, mientras que el octal (base 8) y hexadecimal (base 16) facilitan la representación simplificada de largas cadenas binarias. Estos sistemas son fundamentales para comprender cómo se almacena y procesa la información en las computadoras, permitiendo conversiones eficientes entre diferentes notaciones numéricas.</p>
+            <div class="tema" id="sistemas-numeracion">
+                <h2>🔢 SISTEMAS DE NUMERACIÓN Y CONVERSIONES (BINARIO, OCTAL Y HEXADECIMAL)</h2>
+                <p>
+                    Sistemas de representación numérica basados en distintas bases: binario (base 2), octal (base 8) y hexadecimal (base 16). Son usados para representar valores en electrónica digital y programación de bajo nivel.
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> El número decimal 10 se escribe como 1010 en el sistema binario y como A en el sistema hexadecimal.</div>
             </div>
 
-            <div class="tema">
-                <h2>➕ Aritmética Binaria</h2>
-                <p>Conjunto de reglas y operaciones matemáticas elementales (suma, resta, multiplicación y división) realizadas de forma directa utilizando únicamente los dígitos 0 y 1. Las operaciones binarias son la base de todas las operaciones realizadas en los circuitos lógicos de un procesador, permitiendo que la máquina realice cálculos complejos mediante combinaciones de operaciones simples entre bits.</p>
+            <div class="tema" id="aritmetica-binaria">
+                <h2>➕ ARITMÉTICA BINARIA</h2>
+                <p>
+                    Reglas y operaciones matemáticas (suma, resta, multiplicación y división) realizadas utilizando únicamente los dígitos 0 y 1. Incluye el manejo de acarreo y operaciones a nivel de bit que son fundamentales para los circuitos aritméticos del procesador.
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Al sumar los números binarios 1 y 1, el resultado es 0 y se lleva un acarreo de 1 a la siguiente posición, formando el número binario 10.</div>
             </div>
 
-            <div class="tema">
-                <h2>🔶 Álgebra de Boole</h2>
-                <p>Estructura matemática para la manipulación y simplificación de variables lógicas que solo poseen dos estados posibles (Verdadero/1 o Falso/0), mediante la aplicación de operadores como AND, OR y NOT. El álgebra booleana es esencial para el diseño de circuitos digitales y la implementación de lógica en los sistemas computacionales, permitiendo simplificar expresiones complejas para optimizar el diseño del hardware.</p>
+            <div class="tema" id="algebra-de-boole">
+                <h2>🔶 ÁLGEBRA DE BOOLE</h2>
+                <p>
+                    Estructura matemática para la manipulación y simplificación de variables lógicas que solo poseen dos estados posibles (Verdadero/1 o Falso/0). Se usan operadores como AND, OR y NOT para modelar circuitos digitales y condiciones lógicas.
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Un sistema de alarma que solo se activa (resultado 1) si la puerta está abierta (entrada A = 1) Y el sensor de movimiento detecta presencia (entrada B = 1); la salida es A AND B.</div>
             </div>
         </section>
 
@@ -164,5 +234,7 @@
             <p>Portafolio Académico de Axel Arias • Universidad Técnica de Cotopaxi</p>
         </footer>
     </main>
+</body>
+</html>
 </body>
 </html>
