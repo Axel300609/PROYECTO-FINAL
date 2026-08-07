@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1 - Estructura y Funcionamiento del Computador</title>
+    <style>
+        :root {
+            --fondo-oscuro: #121212;
+            --fondo-tarjeta: #1e1e1e;
+            --texto-principal: #e0e0e0;
+            --color-acento: #00e676;
+            --color-hover: #00c853;
+            --borde: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--fondo-oscuro);
+            color: var(--texto-principal);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        main {
+            width: 92%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        header {
+            background-color: var(--fondo-tarjeta);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--borde);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--color-acento);
+        }
+
+        .btn-volver {
+            background-color: var(--color-acento);
+            color: #000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--color-hover);
+            transform: scale(1.05);
+        }
+
+        .contenido {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tema {
+            background-color: var(--fondo-tarjeta);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--borde);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        .tema:hover {
+            border-color: var(--color-acento);
+            box-shadow: 0 8px 24px rgba(0,230,118,0.12);
+            transform: translateY(-4px);
+        }
+
+        .tema h2 {
+            color: var(--color-acento);
+            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tema p {
+            margin: 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid var(--borde);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>💻 Unidad 1: Estructura y Funcionamiento del Computador</h1>
+            <a href="index.html" class="btn-volver">← Regresar al inicio</a>
+        </header>
+
+        <section class="contenido">
+            <div class="tema">
+                <h2>🏗️ Modelo de Von Neumann y Harvard</h2>
+                <p>Arquitecturas de diseño para computadoras. El modelo de Von Neumann emplea una única memoria para almacenar tanto datos como instrucciones del programa, mientras que la arquitectura Harvard utiliza memorias y buses físicamente independientes para datos e instrucciones. Esta última mejora el rendimiento al permitir acceso simultáneo a datos e instrucciones, siendo especialmente utilizada en procesadores embebidos y sistemas de tiempo real.</p>
+            </div>
+
+            <div class="tema">
+                <h2>⚙️ Sistemas Operativos</h2>
+                <p>Software principal que administra y coordina los recursos de hardware del computador (procesador, memoria, almacenamiento y periféricos), sirviendo como plataforma de ejecución para las aplicaciones de usuario. El sistema operativo proporciona una interfaz amigable entre el usuario y el hardware, gestionando tareas como la asignación de recursos, la seguridad, la multitarea y el manejo de dispositivos periféricos.</p>
+            </div>
+
+            <div class="tema">
+                <h2>🔢 Sistemas de Numeración y Conversiones (Binario, Octal y Hexadecimal)</h2>
+                <p>Sistemas de representación numérica basados en distintas bases. El sistema binario (base 2) es utilizado por los circuitos del procesador, mientras que el octal (base 8) y hexadecimal (base 16) facilitan la representación simplificada de largas cadenas binarias. Estos sistemas son fundamentales para comprender cómo se almacena y procesa la información en las computadoras, permitiendo conversiones eficientes entre diferentes notaciones numéricas.</p>
+            </div>
+
+            <div class="tema">
+                <h2>➕ Aritmética Binaria</h2>
+                <p>Conjunto de reglas y operaciones matemáticas elementales (suma, resta, multiplicación y división) realizadas de forma directa utilizando únicamente los dígitos 0 y 1. Las operaciones binarias son la base de todas las operaciones realizadas en los circuitos lógicos de un procesador, permitiendo que la máquina realice cálculos complejos mediante combinaciones de operaciones simples entre bits.</p>
+            </div>
+
+            <div class="tema">
+                <h2>🔶 Álgebra de Boole</h2>
+                <p>Estructura matemática para la manipulación y simplificación de variables lógicas que solo poseen dos estados posibles (Verdadero/1 o Falso/0), mediante la aplicación de operadores como AND, OR y NOT. El álgebra booleana es esencial para el diseño de circuitos digitales y la implementación de lógica en los sistemas computacionales, permitiendo simplificar expresiones complejas para optimizar el diseño del hardware.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Portafolio Académico de Axel Arias • Universidad Técnica de Cotopaxi</p>
+        </footer>
+    </main>
+</body>
+</html>
