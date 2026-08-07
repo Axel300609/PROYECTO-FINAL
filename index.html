@@ -66,10 +66,7 @@
             padding:10px;
         }
 
-        /* ===== ENCABEZADO INSTITUCIONAL =====
-           - Más alto y amplio
-           - Título en una sola línea con colores por palabra
-        */
+        /* ===== ENCABEZADO INSTITUCIONAL ===== */
         header{
             background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
             border-radius: calc(var(--radius) + 4px);
@@ -82,7 +79,7 @@
             backdrop-filter: blur(6px);
         }
 
-        /* Foto de perfil: mucho más grande con glow */
+        /* Foto de perfil: contenedores e imagen */
         .foto-perfil {
             width:180px;
             height:180px;
@@ -90,13 +87,19 @@
             display:flex;
             align-items:center;
             justify-content:center;
-            font-size:56px;
             background: linear-gradient(135deg,#0c0c0f,#171718);
-            border: 6px solid rgba(255,255,255,0.04);
-            box-shadow: 0 18px 60px rgba(0,0,0,0.7), 0 0 36px rgba(0,229,255,0.12) inset, 0 0 36px rgba(0,255,102,0.06);
+            border: 4px solid rgba(0, 229, 255, 0.4);
+            box-shadow: 0 18px 60px rgba(0,0,0,0.7), 0 0 24px rgba(0,229,255,0.25);
             flex-shrink:0;
+            overflow: hidden;
         }
-        .foto-perfil img{ width:100%; height:100%; object-fit:cover; border-radius:12px; display:block; }
+        .foto-perfil img{ 
+            width:100%; 
+            height:100%; 
+            object-fit:cover; 
+            border-radius:14px; 
+            display:block; 
+        }
 
         .info-institucion{
             display:flex;
@@ -105,7 +108,6 @@
             width:100%;
         }
 
-        /* Title single line - prevent wrap */
         .titulo-universidad{
             display:flex;
             align-items:center;
@@ -116,24 +118,20 @@
 
         .titulo-universidad h1{
             margin:0;
-            font-size:clamp(1.45rem, 2.6vw, 2.6rem); /* destacado y responsivo */
+            font-size:clamp(1.45rem, 2.6vw, 2.6rem);
             letter-spacing:1.2px;
             font-weight:900;
             text-transform:uppercase;
             line-height:1;
         }
 
-        /* color por palabra */
         .titulo-universidad .u-universidad{ color: var(--neon-cian); padding-right:6px; }
         .titulo-universidad .u-tecnica{ color: #FFFFFF; padding-right:6px; }
         .titulo-universidad .u-cotopaxi{ color: var(--neon-rojo); }
 
         .subtitle{ font-weight:800; opacity:0.85; font-size:0.98rem; letter-spacing:0.6px; text-transform:uppercase; }
 
-        /* ===== TARJETA DE INFORMACIÓN PERSONAL =====
-           - etiquetas en verde neón
-           - todo en mayúsculas
-        */
+        /* ===== TARJETA DE INFORMACIÓN PERSONAL ===== */
         .info-estudiante {
             background: var(--card-bg);
             padding: 20px 22px;
@@ -165,7 +163,7 @@
             font-weight:800;
         }
 
-        /* ===== RESTO (tarjetas unidades y redes) - mantener estilo gamer existente ===== */
+        /* ===== SECCIÓN UNIDADES ===== */
         .seccion-unidades{
             display:grid;
             grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
@@ -190,7 +188,6 @@
 
         .icono-unidad{ font-size:2.8rem; margin-bottom:8px; }
 
-        /* Estilos para estrellas y puntuación */
         .unidad-puntuacion {
             display: flex;
             flex-direction: column;
@@ -228,7 +225,7 @@
         .unidad-link.u3 .btn-entrar{ background:linear-gradient(90deg,var(--neon-gold),#FFC107); color:#000; box-shadow: 0 8px 30px rgba(255,215,0,0.08); }
         .btn-entrar:hover{ transform: translateY(-3px) scale(1.02); filter:brightness(1.04); }
 
-        /* redes */
+        /* REDES SOCIALES */
         .seccion-redes{ display:flex; flex-direction:column; gap:12px; align-items:center; padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
         .seccion-redes h2{ margin:0; font-size:1rem; font-weight:900; text-transform:uppercase; color:var(--neon-fucsia); }
         .redes-lista{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; align-items:center; width:100% }
@@ -239,16 +236,16 @@
 
         footer{ text-align:center; margin:6px 0 24px; color:var(--muted); font-weight:700 }
 
-        /* responsive tweaks */
+        /* RESPONSIVE */
         @media (max-width:920px){
-            .titulo-universidad h1{ font-size:1.6rem; white-space:normal; } /* allow wrap on small screens to avoid overflow */
+            .titulo-universidad h1{ font-size:1.6rem; white-space:normal; }
             header{ flex-direction:column; align-items:center; text-align:center; gap:12px; padding:20px; }
-            .foto-perfil{ width:140px; height:140px; font-size:44px; }
+            .foto-perfil{ width:140px; height:140px; }
             .info-estudiante .label{ min-width:110px; }
             .unidad-link{ min-height:340px; }
         }
         @media (max-width:520px){
-            .foto-perfil{ width:120px; height:120px; font-size:36px; }
+            .foto-perfil{ width:120px; height:120px; }
             .info-estudiante p{ font-size:0.92rem }
             .estrellas{ font-size:1.2rem; }
             .unidad-link{ min-height:320px; }
@@ -260,11 +257,10 @@
     <div class="bg-neon" aria-hidden="true"></div>
 
     <main>
-        <!-- ENCABEZADO AGRANDADO -->
+        <!-- ENCABEZADO AGRANDADO CON FOTO ENLAZADA -->
         <header>
-            <div class="foto-perfil" role="img" aria-label="Foto de perfil">
-                <!-- Si tienes una imagen real, reemplaza el emoji por: <img src="ruta.jpg" alt="Axel Arias"> -->
-                👤
+            <div class="foto-perfil">
+                <img src="perfil.jpeg" alt="Foto de Axel Arias">
             </div>
 
             <div class="info-institucion">
@@ -279,7 +275,7 @@
             </div>
         </header>
 
-        <!-- INFORMACIÓN PERSONAL (MAYÚSCULAS, etiquetas verde neón) -->
+        <!-- INFORMACIÓN PERSONAL -->
         <section class="info-estudiante" aria-label="Información del estudiante">
             <p><span class="label">NOMBRE:</span> <span class="value">AXEL ARIAS</span></p>
             <p><span class="label">EDAD:</span> <span class="value">19 AÑOS</span></p>
@@ -288,7 +284,7 @@
             <p><span class="label">CORREO:</span> <span class="value">ARIASTWD16@GMAIL.COM</span></p>
         </section>
 
-        <!-- SECCIÓN DE UNIDADES (mantengo tu diseño gamer previo) -->
+        <!-- SECCIÓN DE UNIDADES -->
         <section class="seccion-unidades" aria-label="Unidades de estudio">
             <!-- UNIDAD 1 -->
             <a href="unidad-1.html" class="unidad-link u1" aria-label="Entrar a Unidad 1">
@@ -297,7 +293,6 @@
                     <div class="unidad-titulo">UNIDAD 1</div>
                     <div class="unidad-subtitulo">ESTRUCTURA Y FUNCIONAMIENTO DEL COMPUTADOR</div>
                     
-                    <!-- Estrellas y Nota Badge -->
                     <div class="unidad-puntuacion">
                         <div class="estrellas">⭐⭐⭐⭐☆</div>
                         <div class="nota-badge">[4.0]</div>
@@ -313,7 +308,6 @@
                     <div class="unidad-titulo">UNIDAD 2</div>
                     <div class="unidad-subtitulo">ALGORITMOS, DIAGRAMAS DE FLUJO Y PSEUDOCÓDIGO</div>
                     
-                    <!-- Estrellas y Nota Badge -->
                     <div class="unidad-puntuacion">
                         <div class="estrellas">⭐⭐⭐☆☆</div>
                         <div class="nota-badge">[3.0]</div>
@@ -329,7 +323,6 @@
                     <div class="unidad-titulo">UNIDAD 3</div>
                     <div class="unidad-subtitulo">PROGRAMACIÓN</div>
                     
-                    <!-- Estrellas y Nota Badge -->
                     <div class="unidad-puntuacion">
                         <div class="estrellas">⭐⭐⭐⭐☆</div>
                         <div class="nota-badge">[4.0]</div>
