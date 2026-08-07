@@ -113,6 +113,12 @@
         .btn-entrar { font-size: 0.85rem; font-weight: bold; color: var(--color-acento); }
         .unidad-link:hover .btn-entrar { color: white; background-color: var(--color-acento); padding: 6px 16px; border-radius: 20px; }
 
+        /* Estilos para ejemplos dentro de las tarjetas */
+        .unidad-link .examples { text-align: left; width: 100%; margin-top: 10px; font-size: 0.92rem; opacity: 0.95; }
+        .unidad-link .examples p { margin: 6px 0; }
+        .unidad-link .examples strong { color: var(--color-acento); display: inline-block; min-width: 180px; }
+        .unidad-link .examples code { background: rgba(255,255,255,0.03); padding: 2px 6px; border-radius: 4px; color: var(--color-acento); }
+
         footer { color: var(--texto-principal); text-align: center; margin: 30px 0 10px; }
 
         /* Responsive */
@@ -153,6 +159,15 @@
                 <div class="numero-unidad">Unidad 1</div>
                 <div class="icono-unidad">💻</div>
                 <p>Estructura y Funcionamiento del Computador</p>
+
+                <div class="examples" aria-label="Ejemplos Unidad 1">
+                    <p><strong>Modelo de Von Neumann y Harvard:</strong> En la arquitectura Von Neumann la CPU lee instrucción y dato por el mismo bus de forma secuencial; en Harvard (p. ej. Arduino) la CPU puede acceder a instrucción y dato al mismo tiempo por canales separados.</p>
+                    <p><strong>Sistemas Operativos:</strong> Ejemplo: Windows o Linux administran la memoria RAM y la CPU al ejecutar simultáneamente un navegador web y un editor de código, asignando procesos y gestionando prioridad.</p>
+                    <p><strong>Sistemas de Numeración y Conversiones:</strong> Ejemplo: el decimal <code>10</code> es <code>1010</code> en binario y <code>A</code> en hexadecimal.</p>
+                    <p><strong>Aritmética Binaria:</strong> Ejemplo: la suma binaria 1 + 1 = <code>10</code> (resultado 0 y acarreo 1).</p>
+                    <p><strong>Álgebra de Boole:</strong> Ejemplo: una puerta lógica AND da salida 1 sólo si sus entradas <code>A</code> y <code>B</code> son ambas 1.</p>
+                </div>
+
                 <div class="btn-entrar">Entrar →</div>
             </a>
 
@@ -160,6 +175,13 @@
                 <div class="numero-unidad">Unidad 2</div>
                 <div class="icono-unidad">📊</div>
                 <p>Algoritmos, Diagramas de Flujo y Pseudocódigo</p>
+
+                <div class="examples" aria-label="Ejemplos Unidad 2">
+                    <p><strong>Algoritmos y sus Características:</strong> Ejemplo: pasos para sumar dos números: 1) Inicio, 2) Pedir A y B, 3) Calcular A + B, 4) Mostrar resultado, 5) Fin.</p>
+                    <p><strong>Diagramas de Flujo:</strong> Ejemplo: un rombo con la condición "¿Edad &gt;= 18?" que dirige a un rectángulo "Mostrar: Mayor de edad" si es verdadero, o a "Mostrar: Menor de edad" si es falso.</p>
+                    <p><strong>Pseudocódigo (breve):</strong> Ejemplo: <code>Inicio; Leer A,B; S = A + B; Imprimir S; Fin;</code></p>
+                </div>
+
                 <div class="btn-entrar">Entrar →</div>
             </a>
 
