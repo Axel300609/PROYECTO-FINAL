@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unidad 3 - Programación</title>
+    <title>UNIDAD 3 - PROGRAMACIÓN</title>
     <style>
         :root {
             --fondo-oscuro: #121212;
@@ -12,6 +12,10 @@
             --color-acento: #00e676;
             --color-hover: #00c853;
             --borde: #333;
+
+            --neon-cian: #00E5FF;
+            --neon-gold: #FFD700;
+            --neon-fucsia: #FF007F;
         }
 
         body {
@@ -23,6 +27,8 @@
             display: flex;
             justify-content: center;
             min-height: 100vh;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
         }
 
         main {
@@ -39,34 +45,46 @@
             padding: 30px;
             border-radius: 15px;
             border: 1px solid var(--borde);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.6);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
+        /* Título principal en MAYÚSCULAS y destacado */
         header h1 {
             margin: 0;
-            font-size: 1.8rem;
-            color: var(--color-acento);
+            font-size: 1.85rem;
+            color: var(--neon-cian);
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase; /* Asegura mayúsculas */
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        /* Botón 'REGRESAR AL INICIO' en MAYÚSCULAS con color llamativo y hover glow */
         .btn-volver {
-            background-color: var(--color-acento);
-            color: #000;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
             display: inline-block;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 28px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase; /* TEXTO EN MAYÚSCULAS */
+            color: #000; /* texto negro para contraste con fondo claro del botón */
+            background: linear-gradient(135deg, var(--neon-gold) 0%, #FFC107 100%);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.10);
+            border: 1px solid rgba(0,0,0,0.2);
+            transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
         }
 
         .btn-volver:hover {
-            background-color: var(--color-hover);
-            transform: scale(1.05);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 20px 70px rgba(255,215,0,0.20), 0 0 28px rgba(255,200,0,0.18);
+            filter: brightness(1.02);
         }
 
         .contenido {
@@ -80,43 +98,52 @@
             padding: 25px;
             border-radius: 15px;
             border: 1px solid var(--borde);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            transition: all 0.28s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.45);
         }
 
         .tema:hover {
             border-color: var(--color-acento);
-            box-shadow: 0 8px 24px rgba(0,230,118,0.12);
-            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(0,230,118,0.06);
+            transform: translateY(-6px);
         }
 
+        /* Títulos de cada tema en MAYÚSCULAS */
         .tema h2 {
+            margin: 0 0 12px 0;
+            font-size: 1.25rem;
             color: var(--color-acento);
-            margin: 0 0 15px 0;
-            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase; /* FORZAR MAYÚSCULAS */
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .tema p {
-            margin: 12px 0;
-            line-height: 1.6;
-            opacity: 0.9;
+            margin: 0;
+            line-height: 1.65;
+            opacity: 0.95;
+            font-weight: 400;
+            color: var(--texto-principal);
         }
 
         .ejemplo {
-            background-color: rgba(0, 230, 118, 0.08);
-            border-left: 4px solid var(--color-acento);
-            padding: 15px;
-            margin: 15px 0 0 0;
+            margin-top: 12px;
+            background: rgba(255,255,255,0.02);
+            padding: 12px 14px;
+            border-left: 4px solid var(--neon-cian);
             border-radius: 8px;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 0.98rem;
+            color: var(--texto-principal);
         }
 
         .ejemplo strong {
-            color: var(--color-acento);
+            display: inline-block;
+            margin-right: 6px;
+            color: var(--texto-principal);
+            font-weight: 700;
         }
 
         .codigo {
@@ -154,35 +181,41 @@
         @media (max-width: 700px) {
             header {
                 flex-direction: column;
-                gap: 20px;
+                gap: 18px;
                 text-align: center;
             }
 
             header h1 {
                 font-size: 1.4rem;
             }
+
+            .btn-volver { padding: 10px 18px; }
         }
     </style>
 </head>
 <body>
     <main>
         <header>
-            <h1>🐍 Unidad 3: Programación</h1>
-            <a href="index.html" class="btn-volver">← Regresar al inicio</a>
+            <h1>🐍 UNIDAD 3: PROGRAMACIÓN</h1>
+            <a href="index.html" class="btn-volver" aria-label="Regresar al inicio">← REGRESAR AL INICIO</a>
         </header>
 
         <section class="contenido">
-            <div class="tema">
-                <h2>📚 Lenguajes y Paradigmas de Programación</h2>
-                <p>Los lenguajes son conjuntos de símbolos y reglas sintácticas para escribir instrucciones; los paradigmas representan los enfoques o filosofías teóricas que determinan cómo se organiza y estructura el código.</p>
+            <div class="tema" id="lenguajes-paradigmas">
+                <h2>📚 LENGUAJES Y PARADIGMAS DE PROGRAMACIÓN</h2>
+                <p>
+                    Los lenguajes son conjuntos de símbolos y reglas sintácticas para escribir instrucciones; los paradigmas representan los enfoques o filosofías que determinan cómo se organiza y piensa la solución (imperativo, declarativo, orientado a objetos, funcional, etc.).
+                </p>
                 <div class="ejemplo">
-                    <strong>Ejemplo:</strong> Python puede utilizarse bajo el paradigma imperativo para ejecutar instrucciones paso a paso (especificando "cómo" hacer algo), o bajo el paradigma orientado a objetos utilizando clases y objetos (definiendo estructuras y comportamientos reutilizables).
+                    <strong>Ejemplo:</strong> Python puede utilizarse bajo el paradigma imperativo para ejecutar instrucciones paso a paso, o bajo estilos funcionales con funciones puras y composición.
                 </div>
             </div>
 
-            <div class="tema">
-                <h2>🐍 Introducción a la Programación en Python</h2>
-                <p>Aplicación de la sintaxis, tipos de datos e instrucciones elementales del lenguaje Python para la elaboración y ejecución de programas informáticos. Python es un lenguaje versátil, legible y con una sintaxis intuitiva.</p>
+            <div class="tema" id="introduccion-python">
+                <h2>🐍 INTRODUCCIÓN A LA PROGRAMACIÓN EN PYTHON</h2>
+                <p>
+                    Aplicación de la sintaxis, tipos de datos e instrucciones elementales del lenguaje Python para la elaboración y ejecución de programas informáticos. Python es un lenguaje versátil y de fácil lectura.
+                </p>
                 <div class="ejemplo">
                     <strong>Ejemplo:</strong>
                     <div class="codigo">nombre = "Axel"<br>print("Hola, " + nombre)</div>
@@ -190,9 +223,11 @@
                 </div>
             </div>
 
-            <div class="tema">
-                <h2>⚡ Operadores Algebraicos, Relacionales y Lógicos</h2>
-                <p>Símbolos diseñados para ejecutar operaciones específicas sobre variables. Los operadores algebraicos realizan operaciones aritméticas, los relacionales comparan valores y los lógicos combinan condiciones.</p>
+            <div class="tema" id="operadores">
+                <h2>⚙️ OPERADORES ALGEBRAICOS, RELACIONALES Y LÓGICOS</h2>
+                <p>
+                    Símbolos diseñados para ejecutar operaciones sobre variables: aritméticos para cálculos, relacionales para comparaciones y lógicos para combinar condiciones.
+                </p>
                 <div class="ejemplo">
                     <strong>Ejemplos:</strong><br>
                     <strong>• Algebraico:</strong> <span class="codigo-inline">total = precio * cantidad</span><br>
@@ -201,19 +236,23 @@
                 </div>
             </div>
 
-            <div class="tema">
-                <h2>🔀 Estructuras de Control Condicionales</h2>
-                <p>Instrucciones que evalúan una condición lógica para determinar qué bloque de código ejecutar. Permiten que el programa tome decisiones basadas en los datos.</p>
+            <div class="tema" id="estructuras-condicionales">
+                <h2>🔀 ESTRUCTURAS DE CONTROL CONDICIONALES</h2>
+                <p>
+                    Instrucciones que evalúan condiciones para determinar qué bloque de código ejecutar. Permiten que el programa tome decisiones basadas en los datos.
+                </p>
                 <div class="ejemplo">
                     <strong>Ejemplo:</strong>
-                    <div class="codigo">if nota >= 7:<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Aprobado")<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Reprobado")</div>
-                    Este código verifica si la nota es mayor o igual a 7 para mostrar si el estudiante aprobó o reprobó.
+                    <div class="codigo">if nota >= 7:<br>&nbsp;&nbsp;&nbsp;&nbsp;print("APROBADO")<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print("REPROBADO")</div>
+                    Este ejemplo verifica si la nota es mayor o igual a 7 y muestra el resultado correspondiente.
                 </div>
             </div>
 
-            <div class="tema">
-                <h2>🔁 Estructuras de Control Repetitivas</h2>
-                <p>Bloques de código encargados de iterar una serie de instrucciones un número determinado de veces o mientras se mantenga cierta condición. Permiten automatizar tareas repetitivas.</p>
+            <div class="tema" id="estructuras-repetitivas">
+                <h2>🔁 ESTRUCTURAS DE CONTROL REPETITIVAS</h2>
+                <p>
+                    Bloques de código que repiten acciones mientras se cumpla una condición o por un número determinado de veces. Permiten automatizar tareas repetitivas.
+                </p>
                 <div class="ejemplo">
                     <strong>Ejemplo:</strong>
                     <div class="codigo">for i in range(1, 4):<br>&nbsp;&nbsp;&nbsp;&nbsp;print(i)</div>
