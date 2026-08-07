@@ -100,9 +100,47 @@
         }
 
         .tema p {
-            margin: 0;
+            margin: 12px 0;
             line-height: 1.6;
             opacity: 0.9;
+        }
+
+        .ejemplo {
+            background-color: rgba(0, 230, 118, 0.08);
+            border-left: 4px solid var(--color-acento);
+            padding: 15px;
+            margin: 15px 0 0 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .ejemplo strong {
+            color: var(--color-acento);
+        }
+
+        .codigo {
+            background-color: #0a0a0a;
+            border: 1px solid var(--borde);
+            padding: 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #00ff00;
+            display: block;
+        }
+
+        .codigo-inline {
+            background-color: #0a0a0a;
+            border: 1px solid var(--borde);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #00ff00;
+            display: inline-block;
         }
 
         footer {
@@ -136,27 +174,51 @@
         <section class="contenido">
             <div class="tema">
                 <h2>📚 Lenguajes y Paradigmas de Programación</h2>
-                <p>Los lenguajes son conjuntos de símbolos y reglas sintácticas para escribir instrucciones; los paradigmas representan los enfoques o filosofías teóricas que determinan cómo se organiza la estructura y el comportamiento del software. Existen paradigmas como programación imperativa (enfocada en cómo hacer algo), programación declarativa (enfocada en qué hacer), programación orientada a objetos (basada en objetos y clases), y programación funcional (basada en funciones matemáticas). Cada paradigma tiene fortalezas específicas para diferentes tipos de problemas.</p>
+                <p>Los lenguajes son conjuntos de símbolos y reglas sintácticas para escribir instrucciones; los paradigmas representan los enfoques o filosofías teóricas que determinan cómo se organiza y estructura el código.</p>
+                <div class="ejemplo">
+                    <strong>Ejemplo:</strong> Python puede utilizarse bajo el paradigma imperativo para ejecutar instrucciones paso a paso (especificando "cómo" hacer algo), o bajo el paradigma orientado a objetos utilizando clases y objetos (definiendo estructuras y comportamientos reutilizables).
+                </div>
             </div>
 
             <div class="tema">
                 <h2>🐍 Introducción a la Programación en Python</h2>
-                <p>Aplicación de la sintaxis, tipos de datos e instrucciones elementales del lenguaje Python para la elaboración y ejecución de programas informáticos. Python es un lenguaje versátil y accesible que destaca por su sintaxis clara y legible. Incluye conceptos como variables, tipos de datos primitivos (enteros, flotantes, cadenas, booleanos), asignación de valores, entrada/salida básica, y estructuras de control fundamentales. Python es ideal para aprender conceptos de programación debido a su curva de aprendizaje suave.</p>
+                <p>Aplicación de la sintaxis, tipos de datos e instrucciones elementales del lenguaje Python para la elaboración y ejecución de programas informáticos. Python es un lenguaje versátil, legible y con una sintaxis intuitiva.</p>
+                <div class="ejemplo">
+                    <strong>Ejemplo:</strong>
+                    <div class="codigo">nombre = "Axel"<br>print("Hola, " + nombre)</div>
+                    Este código crea una variable de texto y luego imprime un saludo por pantalla, mostrando: <strong>Hola, Axel</strong>
+                </div>
             </div>
 
             <div class="tema">
                 <h2>⚡ Operadores Algebraicos, Relacionales y Lógicos</h2>
-                <p>Símbolos diseñados para ejecutar operaciones específicas sobre variables. Operadores Algebraicos realizan operaciones aritméticas básicas (suma +, resta -, multiplicación *, división /, módulo %, potencia **). Operadores Relacionales validan relaciones de orden o equivalencia entre valores (igual ==, diferente !=, mayor >, menor &lt;, mayor o igual >=, menor o igual &lt;=). Operadores Lógicos combinan expresiones verdaderas o falsas mediante reglas booleanas (AND, OR, NOT). Estos operadores son fundamentales para construir expresiones complejas y tomar decisiones en programas.</p>
+                <p>Símbolos diseñados para ejecutar operaciones específicas sobre variables. Los operadores algebraicos realizan operaciones aritméticas, los relacionales comparan valores y los lógicos combinan condiciones.</p>
+                <div class="ejemplo">
+                    <strong>Ejemplos:</strong><br>
+                    <strong>• Algebraico:</strong> <span class="codigo-inline">total = precio * cantidad</span><br>
+                    <strong>• Relacional:</strong> <span class="codigo-inline">es_mayor = (edad >= 18)</span><br>
+                    <strong>• Lógico:</strong> <span class="codigo-inline">acceso = (usuario_correcto and clave_correcta)</span>
+                </div>
             </div>
 
             <div class="tema">
                 <h2>🔀 Estructuras de Control Condicionales</h2>
-                <p>Instrucciones que evalúan una condición lógica para determinar qué bloque de código ejecutar. Las estructuras condicionales incluyen la sentencia if (si la condición es verdadera, ejecuta el bloque), if-else (ejecuta un bloque u otro según la condición), if-elif-else (evalúa múltiples condiciones en secuencia), y operador ternario (sintaxis compacta para condiciones simples). Estas estructuras permiten que los programas tomen decisiones y ejecuten diferentes caminos según las circunstancias, siendo esenciales para crear lógica flexible y adaptativa.</p>
+                <p>Instrucciones que evalúan una condición lógica para determinar qué bloque de código ejecutar. Permiten que el programa tome decisiones basadas en los datos.</p>
+                <div class="ejemplo">
+                    <strong>Ejemplo:</strong>
+                    <div class="codigo">if nota >= 7:<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Aprobado")<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Reprobado")</div>
+                    Este código verifica si la nota es mayor o igual a 7 para mostrar si el estudiante aprobó o reprobó.
+                </div>
             </div>
 
             <div class="tema">
                 <h2>🔁 Estructuras de Control Repetitivas</h2>
-                <p>Bloques de código encargados de iterar una serie de instrucciones un número determinado de veces o mientras se mantenga cierta condición. Las estructuras repetitivas incluyen el bucle for (itera un número específico de veces o sobre elementos de una colección), el bucle while (itera mientras se cumpla una condición), y sentencias de control de flujo como break (termina el bucle) y continue (salta a la siguiente iteración). Estas estructuras son vitales para automatizar tareas repetitivas, procesar colecciones de datos y crear algoritmos eficientes que evitan código redundante.</p>
+                <p>Bloques de código encargados de iterar una serie de instrucciones un número determinado de veces o mientras se mantenga cierta condición. Permiten automatizar tareas repetitivas.</p>
+                <div class="ejemplo">
+                    <strong>Ejemplo:</strong>
+                    <div class="codigo">for i in range(1, 4):<br>&nbsp;&nbsp;&nbsp;&nbsp;print(i)</div>
+                    Este código imprime los números 1, 2 y 3 utilizando un bucle for que itera tres veces.
+                </div>
             </div>
         </section>
 
