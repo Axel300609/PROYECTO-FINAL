@@ -1,389 +1,329 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portafolio Gamer - Axel Arias</title>
-  <style>
-    /* -------- VARIABLES -------- */
-    :root{
-      --bg-dark:#050406;
-      --card-bg: rgba(20,20,22,0.85);
-      --text:#e6e6e6;
-      --muted:rgba(230,230,230,0.6);
-      --neon-cian: #00E5FF;
-      --neon-verde:#00FF66;
-      --neon-gold:#FFD700;
-      --neon-fucsia:#FF00AA;
-      --glow-cian: 0 8px 36px rgba(0,229,255,0.12), 0 2px 10px rgba(0,229,255,0.08);
-      --glow-verde: 0 8px 36px rgba(0,255,102,0.12);
-      --glow-gold: 0 8px 36px rgba(255,215,0,0.12);
-      --radius:14px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", monospace;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portafolio Gamer - Axel Arias</title>
+    <style>
+        /* ===== VARIABLES ===== */
+        :root{
+            --bg-dark:#050406;
+            --card-bg: rgba(20,20,22,0.88);
+            --text:#e6e6e6;
+            --muted:rgba(230,230,230,0.6);
 
-    /* -------- FONDO PIXEL / NEON (no imágenes externas requeridas) -------- */
-    html,body{height:100%;margin:0}
-    body{
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      color:var(--text);
-      background-color:var(--bg-dark);
-      display:flex;
-      justify-content:center;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+            --neon-cian: #00E5FF;    /* azul brillante */
+            --neon-verde: #00FF66;   /* verde neón para etiquetas */
+            --neon-gold: #FFD700;
+            --neon-fucsia:#FF00AA;
+            --neon-rojo: #FF2A2A;    /* rojo brillante para 'DE COTOPAXI' */
 
-    /* Pixel grid + animated neon blobs overlay */
-    .bg-layer{
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      background:
-        /* dark grid to simulate pixel blocks */
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 22px),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 22px),
-        radial-gradient(1200px 500px at 10% 20%, rgba(0,229,255,0.06), transparent 8%),
-        radial-gradient(900px 400px at 85% 70%, rgba(0,255,102,0.05), transparent 8%),
-        linear-gradient(180deg,#040406 0%, #08080b 100%);
-      background-blend-mode: overlay, overlay, screen, screen, normal;
-      filter: contrast(1.02) saturate(1.05);
-    }
+            --glow-cian: 0 12px 48px rgba(0,229,255,0.12);
+            --glow-verde: 0 12px 48px rgba(0,255,102,0.12);
+            --radius:16px;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", monospace;
+        }
 
-    /* animated neon pulses */
-    .bg-neon {
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      pointer-events:none;
-      mix-blend-mode: screen;
-      opacity:0.9;
-      animation: neon-move 10s linear infinite;
-      background:
-        radial-gradient(600px 200px at 8% 15%, rgba(0,229,255,0.08), transparent 12%),
-        radial-gradient(500px 180px at 75% 70%, rgba(255,0,170,0.06), transparent 10%),
-        radial-gradient(420px 160px at 50% 30%, rgba(255,215,0,0.04), transparent 9%);
-    }
-    @keyframes neon-move {
-      0%{transform:translate3d(0,0,0)}
-      50%{transform:translate3d(8px,-6px,0) scale(1.02)}
-      100%{transform:translate3d(0,0,0)}
-    }
+        /* ===== BASE ===== */
+        html,body{height:100%;margin:0}
+        body{
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            background: linear-gradient(180deg,#040406 0%, #08080b 100%);
+            color:var(--text);
+            display:flex;
+            justify-content:center;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
 
-    /* -------- CONTENEDOR PRINCIPAL -------- */
-    main{
-      width:92%;
-      max-width:1200px;
-      margin:36px auto;
-      display:flex;
-      flex-direction:column;
-      gap:24px;
-      padding:18px;
-    }
+        /* subtle pixel grid + neon blobs for gamer feel (no external images) */
+        .bg-layer{
+            position:fixed;inset:0;z-index:-2;
+            background:
+                repeating-linear-gradient(0deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 20px),
+                repeating-linear-gradient(90deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 20px),
+                radial-gradient(900px 350px at 12% 18%, rgba(0,229,255,0.06), transparent 9%),
+                radial-gradient(700px 300px at 88% 72%, rgba(255,42,42,0.04), transparent 8%);
+            background-blend-mode: overlay, overlay, screen, screen;
+            filter: contrast(1.02) saturate(1.05);
+        }
+        .bg-neon{ position:fixed; inset:0; z-index:-1; mix-blend-mode:screen; pointer-events:none;
+            background:
+                radial-gradient(500px 180px at 10% 20%, rgba(0,229,255,0.06), transparent 12%),
+                radial-gradient(420px 160px at 70% 60%, rgba(0,255,102,0.04), transparent 10%);
+            animation: neon-move 12s linear infinite;
+            opacity:0.9;
+        }
+        @keyframes neon-move { 0%{transform:translate3d(0,0,0)} 50%{transform:translate3d(6px,-6px,0) scale(1.02)} 100%{transform:translate3d(0,0,0)} }
 
-    /* header */
-    header{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius);
-      padding:18px;
-      display:flex;
-      gap:18px;
-      align-items:center;
-      border:1px solid rgba(255,255,255,0.04);
-      box-shadow: var(--glow-cian);
-      backdrop-filter: blur(4px);
-    }
-    .foto-perfil{
-      width:96px;height:96px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(135deg,#0c0c0f, #151517);
-      border:3px solid rgba(255,255,255,0.04);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 18px rgba(0,229,255,0.06) inset;
-      font-size:42px;
-    }
-    .info-institucion p{margin:0;font-weight:800;letter-spacing:0.6px}
-    .info-institucion h1{margin:4px 0 0 0;font-size:1.4rem;line-height:1}
-    .subtitle{font-weight:700;opacity:0.85;margin-top:6px;font-size:0.92rem}
+        main{
+            width:94%;
+            max-width:1200px;
+            margin:40px auto;
+            display:flex;
+            flex-direction:column;
+            gap:22px;
+            padding:10px;
+        }
 
-    /* -------- SECCION DE UNIDADES: tarjetas estilo gamer -------- */
-    .seccion-unidades{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-      gap:20px;
-    }
+        /* ===== ENCABEZADO INSTITUCIONAL =====
+           - Más alto y amplio
+           - Título en una sola línea con colores por palabra
+        */
+        header{
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius: calc(var(--radius) + 4px);
+            padding: 28px 26px;
+            display:flex;
+            align-items:center;
+            gap:24px;
+            border:1px solid rgba(255,255,255,0.04);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(6px);
+        }
 
-    .unidad-link{
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      align-items:center;
-      text-decoration:none;
-      color:var(--text);
-      min-height:320px;
-      padding:26px;
-      border-radius:16px;
-      background:var(--card-bg);
-      border:2px solid transparent;
-      position:relative;
-      overflow:visible;
-      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
-      text-align:center;
-      gap:8px;
-    }
+        /* Foto de perfil: mucho más grande con glow */
+        .foto-perfil {
+            width:180px;
+            height:180px;
+            border-radius:18px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:56px;
+            background: linear-gradient(135deg,#0c0c0f,#171718);
+            border: 6px solid rgba(255,255,255,0.04);
+            box-shadow: 0 18px 60px rgba(0,0,0,0.7), 0 0 36px rgba(0,229,255,0.12) inset, 0 0 36px rgba(0,255,102,0.06);
+            flex-shrink:0;
+        }
+        .foto-perfil img{ width:100%; height:100%; object-fit:cover; border-radius:12px; display:block; }
 
-    /* neon borders using pseudo element */
-    .unidad-link::after{
-      content:"";
-      position:absolute;inset:-3px;
-      border-radius:18px;
-      z-index:-1;
-      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-      mask: linear-gradient(#000, #000);
-      pointer-events:none;
-      transition:opacity .22s;
-      opacity:0.95;
-    }
+        .info-institucion{
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+            width:100%;
+        }
 
-    /* per-card neon glow and border (u1,u2,u3) */
-    .unidad-link.u1{ box-shadow: var(--glow-cian); border-image: linear-gradient(90deg, var(--neon-cian), #00B8FF) 1; }
-    .unidad-link.u1::after{ background: linear-gradient(90deg, rgba(0,229,255,0.12), rgba(0,184,255,0.06)); filter: blur(10px); }
-    .unidad-link.u2{ box-shadow: var(--glow-verde); border-image: linear-gradient(90deg, var(--neon-verde), #00E676) 1; }
-    .unidad-link.u2::after{ background: linear-gradient(90deg, rgba(0,255,102,0.12), rgba(0,230,118,0.06)); filter: blur(10px); }
-    .unidad-link.u3{ box-shadow: var(--glow-gold); border-image: linear-gradient(90deg, var(--neon-gold), #FFC107) 1; }
-    .unidad-link.u3::after{ background: linear-gradient(90deg, rgba(255,215,0,0.12), rgba(255,200,50,0.06)); filter: blur(10px); }
+        /* Title single line - prevent wrap */
+        .titulo-universidad{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            white-space:nowrap;
+            justify-content:flex-start;
+        }
 
-    .unidad-link:hover{ transform: translateY(-8px) scale(1.01); filter:brightness(1.03); }
+        .titulo-universidad h1{
+            margin:0;
+            font-size:clamp(1.45rem, 2.6vw, 2.6rem); /* destacado y responsivo */
+            letter-spacing:1.2px;
+            font-weight:900;
+            text-transform:uppercase;
+            line-height:1;
+        }
 
-    .icono-unidad{ font-size:3.2rem; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7)); }
-    .unidad-titulo{ font-weight:900; font-size:1.05rem; letter-spacing:1px; text-transform:uppercase; }
-    .unidad-subtitulo{ font-weight:800; font-size:0.96rem; opacity:0.95; text-transform:uppercase; margin-top:6px; }
+        /* color por palabra */
+        .titulo-universidad .u-universidad{ color: var(--neon-cian); padding-right:6px; }
+        .titulo-universidad .u-tecnica{ color: #FFFFFF; padding-right:6px; }
+        .titulo-universidad .u-cotopaxi{ color: var(--neon-rojo); }
 
-    /* ---- META: temas y estrellas (nuevo espacio) ---- */
-    .unidad-meta{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      align-items:center;
-      margin-top:10px;
-    }
-    .temas-badge{
-      font-weight:900;
-      font-family:var(--mono);
-      background: rgba(255,255,255,0.02);
-      padding:8px 12px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,0.03);
-      font-size:0.92rem;
-      letter-spacing:0.8px;
-      text-transform:uppercase;
-    }
+        .subtitle{ font-weight:800; opacity:0.85; font-size:0.98rem; letter-spacing:0.6px; text-transform:uppercase; }
 
-    .estrellas{
-      display:inline-flex;
-      gap:6px;
-      align-items:center;
-      font-size:1.05rem;
-      letter-spacing:1px;
-    }
-    .estrellas .star{
-      font-size:1.12rem;
-      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.6));
-    }
-    .star.filled{ color: var(--neon-gold); text-shadow: 0 4px 16px rgba(255,215,0,0.12); }
-    .star.half{ color: linear-gradient(90deg,var(--neon-gold),#fff); } /* fallback visual only */
-    .star.empty{ color: rgba(255,255,255,0.15); }
+        /* Botón volver en el extremo derecho del header */
+        .header-actions{ margin-left:auto; display:flex; gap:12px; align-items:center; }
+        .btn-volver {
+            display:inline-block;
+            text-decoration:none;
+            padding:12px 22px;
+            border-radius:28px;
+            font-weight:800;
+            font-size:0.95rem;
+            text-transform:uppercase;
+            color:#000;
+            background: linear-gradient(135deg, var(--neon-gold) 0%, #FFC107 100%);
+            box-shadow: 0 12px 40px rgba(255,215,0,0.12);
+            border:1px solid rgba(0,0,0,0.22);
+            transition: transform .16s ease, filter .16s ease;
+        }
+        .btn-volver:hover{ transform: translateY(-4px) scale(1.02); filter:brightness(1.03); }
 
-    .score-badge{
-      margin-left:8px;
-      background: rgba(255,255,255,0.02);
-      padding:4px 8px;
-      border-radius:8px;
-      font-weight:800;
-      font-size:0.88rem;
-      color:var(--muted);
-      border:1px solid rgba(255,255,255,0.03);
-      font-family:var(--mono);
-    }
+        /* ===== TARJETA DE INFORMACIÓN PERSONAL =====
+           - etiquetas en verde neón
+           - todo en mayúsculas
+        */
+        .info-estudiante {
+            background: var(--card-bg);
+            padding: 20px 22px;
+            border-radius: 14px;
+            border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 10px 36px rgba(0,0,0,0.6);
+            text-transform:uppercase;
+        }
 
-    /* ENTRAR button */
-    .btn-entrar{
-      display:inline-block;
-      padding:12px 26px;
-      border-radius:999px;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      background:linear-gradient(90deg,#ffffff 0%, rgba(255,255,255,0.85) 100%);
-      color:#000;
-      transition:transform .16s ease, box-shadow .16s ease;
-    }
-    .unidad-link.u1 .btn-entrar{ background: linear-gradient(90deg, var(--neon-cian), #00B8FF); color:#042; box-shadow: 0 8px 30px rgba(0,229,255,0.12); }
-    .unidad-link.u2 .btn-entrar{ background: linear-gradient(90deg, var(--neon-verde), #00E676); color:#042; box-shadow: 0 8px 30px rgba(0,255,102,0.12); }
-    .unidad-link.u3 .btn-entrar{ background: linear-gradient(90deg, var(--neon-gold), #FFC107); color:#000; box-shadow: 0 8px 30px rgba(255,215,0,0.12); }
-    .btn-entrar:hover{ transform: translateY(-3px) scale(1.03); filter:brightness(1.06); }
+        .info-estudiante p{
+            margin:8px 0;
+            display:flex;
+            align-items:center;
+            gap:12px;
+            font-weight:800;
+            line-height:1.1;
+            letter-spacing:0.6px;
+            font-size:0.98rem;
+        }
 
-    /* Redes sociales (gamer style) */
-    .seccion-redes{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      align-items:center;
-      padding:16px;
-      border-radius:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
-      border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-    }
-    .seccion-redes h2{ margin:0; font-size:1.05rem; font-weight:900; text-transform:uppercase; color:var(--neon-fucsia); letter-spacing:1px; }
-    .redes-lista{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; align-items:center; width:100% }
+        .info-estudiante .label{
+            color:var(--neon-verde);
+            min-width:140px;
+            display:inline-block;
+            font-weight:900;
+        }
+        .info-estudiante .value{
+            color:var(--text);
+            font-weight:800;
+        }
 
-    .social-link{
-      min-width:220px;
-      display:inline-flex;
-      gap:12px;
-      align-items:center;
-      justify-content:center;
-      padding:10px 16px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:900;
-      text-transform:uppercase;
-      color:var(--text);
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
-      border:2px solid rgba(255,255,255,0.02);
-      transition: transform .16s ease, box-shadow .16s ease;
-    }
-    .social-link.instagram{ border-image: linear-gradient(90deg,#f58529,#dd2a7b,#8134af) 1; }
-    .social-link.tiktok{ border-image: linear-gradient(90deg,#69C9D0,#EE1D52) 1; }
-    .social-link:hover{ transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
+        /* ===== RESTO (tarjetas unidades y redes) - mantener estilo gamer existente ===== */
+        .seccion-unidades{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap:20px;
+        }
 
-    footer{ text-align:center; margin:6px 0 24px; color:var(--muted); font-weight:700 }
+        .unidad-link{
+            display:flex;flex-direction:column;justify-content:space-between;align-items:center;
+            text-decoration:none;color:var(--text);
+            min-height:320px;padding:22px;border-radius:12px;background:var(--card-bg);
+            border:2px solid transparent;position:relative;overflow:visible;
+            transition: transform .22s ease, box-shadow .22s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            text-align:center;
+        }
+        .unidad-link.u1{ box-shadow: 0 12px 46px rgba(0,229,255,0.08); border-image: linear-gradient(90deg,var(--neon-cian),#00B8FF) 1; }
+        .unidad-link.u2{ box-shadow: 0 12px 46px rgba(0,255,102,0.08); border-image: linear-gradient(90deg,var(--neon-verde),#00E676) 1; }
+        .unidad-link.u3{ box-shadow: 0 12px 46px rgba(255,215,0,0.08); border-image: linear-gradient(90deg,var(--neon-gold),#FFC107) 1; }
 
-    /* responsive */
-    @media (max-width:880px){
-      .seccion-unidades{ grid-template-columns: 1fr; }
-      .unidad-link{ min-height:300px; padding:18px }
-      .foto-perfil{ width:78px;height:78px;font-size:28px }
-    }
-  </style>
+        .unidad-titulo{ font-weight:900; font-size:1.02rem; text-transform:uppercase; letter-spacing:0.8px; }
+        .unidad-subtitulo{ font-weight:800; font-size:0.92rem; opacity:0.95; text-transform:uppercase; margin-top:6px; }
+
+        .icono-unidad{ font-size:2.8rem; margin-bottom:8px; }
+
+        .btn-entrar{
+            padding:10px 22px;border-radius:999px;font-weight:900;text-transform:uppercase;
+            letter-spacing:1px;background:linear-gradient(90deg,#fff,#f2f2f2);color:#000;transition: transform .12s ease;
+        }
+        .unidad-link.u1 .btn-entrar{ background:linear-gradient(90deg,var(--neon-cian),#00B8FF); color:#041; box-shadow: 0 8px 30px rgba(0,229,255,0.08); }
+        .unidad-link.u2 .btn-entrar{ background:linear-gradient(90deg,var(--neon-verde),#00E676); color:#041; box-shadow: 0 8px 30px rgba(0,255,102,0.08); }
+        .unidad-link.u3 .btn-entrar{ background:linear-gradient(90deg,var(--neon-gold),#FFC107); color:#000; box-shadow: 0 8px 30px rgba(255,215,0,0.08); }
+        .btn-entrar:hover{ transform: translateY(-3px) scale(1.02); filter:brightness(1.04); }
+
+        /* redes */
+        .seccion-redes{ display:flex; flex-direction:column; gap:12px; align-items:center; padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.03); }
+        .seccion-redes h2{ margin:0; font-size:1rem; font-weight:900; text-transform:uppercase; color:var(--neon-fucsia); }
+        .redes-lista{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; align-items:center; width:100% }
+        .social-link{ min-width:220px; display:inline-flex; gap:12px; align-items:center; justify-content:center; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:900; text-transform:uppercase; color:var(--text); background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:2px solid rgba(255,255,255,0.02); transition: transform .16s ease; }
+        .social-link.instagram{ border-image: linear-gradient(90deg,#f58529,#dd2a7b,#8134af) 1; }
+        .social-link.tiktok{ border-image: linear-gradient(90deg,#69C9D0,#EE1D52) 1; }
+        .social-link:hover{ transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
+
+        footer{ text-align:center; margin:6px 0 24px; color:var(--muted); font-weight:700 }
+
+        /* responsive tweaks */
+        @media (max-width:920px){
+            .titulo-universidad h1{ font-size:1.6rem; white-space:normal; } /* allow wrap on small screens to avoid overflow */
+            header{ flex-direction:column; align-items:center; text-align:center; gap:12px; padding:20px; }
+            .foto-perfil{ width:140px; height:140px; font-size:44px; }
+            .info-estudiante .label{ min-width:110px; }
+        }
+        @media (max-width:520px){
+            .foto-perfil{ width:120px; height:120px; font-size:36px; }
+            .info-estudiante p{ font-size:0.92rem }
+        }
+    </style>
 </head>
 <body>
-  <div class="bg-layer" aria-hidden="true"></div>
-  <div class="bg-neon" aria-hidden="true"></div>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-neon" aria-hidden="true"></div>
 
-  <main>
-    <!-- HEADER -->
-    <header>
-      <div class="foto-perfil" role="img" aria-label="Foto de perfil">👤</div>
-      <div class="info-institucion">
-        <p>PORTAFOLIO DE: <span style="color:var(--neon-verde);font-weight:900">AXEL ARIAS</span></p>
-        <h1>UNIVERSIDAD TÉCNICA<br/>DE COTOPAXI</h1>
-        <div class="subtitle">INGENIERÍA EN SOFTWARE - NIVELACIÓN</div>
-      </div>
-    </header>
-
-    <!-- INFO ESTUDIANTE -->
-    <section style="background:rgba(255,255,255,0.02);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03);">
-      <p style="margin:6px 0;font-weight:900"><strong style="color:var(--neon-cian)">NOMBRE:</strong> AXEL ARIAS</p>
-      <p style="margin:6px 0;font-weight:900"><strong style="color:var(--neon-cian)">EDAD:</strong> 19 AÑOS</p>
-      <p style="margin:6px 0;font-weight:900"><strong style="color:var(--neon-cian)">OCUPACIÓN:</strong> ESTUDIANTE DE LA UTC</p>
-      <p style="margin:6px 0;font-weight:900"><strong style="color:var(--neon-cian)">UBICACIÓN:</strong> QUITO - PICHINCHA</p>
-      <p style="margin:6px 0;font-weight:900"><strong style="color:var(--neon-cian)">CORREO:</strong> ARIASTWD16@GMAIL.COM</p>
-    </section>
-
-    <!-- UNIDADES -->
-    <section class="seccion-unidades" aria-label="Unidades de estudio">
-      <!-- Unidad 1 -->
-      <a href="unidad-1.html" class="unidad-link u1" aria-label="Entrar a Unidad 1">
-        <div>
-          <div class="icono-unidad" aria-hidden="true">💻</div>
-          <div class="unidad-titulo">UNIDAD 1</div>
-          <div class="unidad-subtitulo">ESTRUCTURA Y FUNCIONAMIENTO DEL COMPUTADOR</div>
-
-          <!-- meta: temas y estrellas -->
-          <div class="unidad-meta" aria-hidden="false">
-            <div class="temas-badge">3/5 TEMAS</div>
-            <div class="estrellas" aria-label="Valoración 3 de 5">
-              <span class="star filled">⭐</span>
-              <span class="star filled">⭐</span>
-              <span class="star filled">⭐</span>
-              <span class="star empty">☆</span>
-              <span class="star empty">☆</span>
-              <span class="score-badge">[3.5]</span>
+    <main>
+        <!-- ENCABEZADO AGRANDADO -->
+        <header>
+            <div class="foto-perfil" role="img" aria-label="Foto de perfil">
+                <!-- Si tienes una imagen real, reemplaza el emoji por: <img src="ruta.jpg" alt="Axel Arias"> -->
+                👤
             </div>
-          </div>
-        </div>
 
-        <div class="btn-entrar" role="button">ENTRAR →</div>
-      </a>
-
-      <!-- Unidad 2 -->
-      <a href="unidad-2.html" class="unidad-link u2" aria-label="Entrar a Unidad 2">
-        <div>
-          <div class="icono-unidad" aria-hidden="true">📊</div>
-          <div class="unidad-titulo">UNIDAD 2</div>
-          <div class="unidad-subtitulo">ALGORITMOS, DIAGRAMAS DE FLUJO Y PSEUDOCÓDIGO</div>
-
-          <div class="unidad-meta">
-            <div class="temas-badge">4/5 TEMAS</div>
-            <div class="estrellas" aria-label="Valoración 4 de 5">
-              <span class="star filled">⭐</span>
-              <span class="star filled">⭐</span>
-              <span class="star filled">⭐</span>
-              <span class="star filled">⭐</span>
-              <span class="star empty">☆</span>
-              <span class="score-badge">[4.0]</span>
+            <div class="info-institucion">
+                <div class="titulo-universidad" role="heading" aria-level="1">
+                    <h1>
+                        <span class="u-universidad">UNIVERSIDAD</span>
+                        <span class="u-tecnica">TÉCNICA</span>
+                        <span class="u-cotopaxi">DE COTOPAXI</span>
+                    </h1>
+                </div>
+                <div class="subtitle">INGENIERÍA EN SOFTWARE - NIVELACIÓN</div>
             </div>
-          </div>
-        </div>
 
-        <div class="btn-entrar" role="button">ENTRAR →</div>
-      </a>
-
-      <!-- Unidad 3 -->
-      <a href="unidad-3.html" class="unidad-link u3" aria-label="Entrar a Unidad 3">
-        <div>
-          <div class="icono-unidad" aria-hidden="true">🐍</div>
-          <div class="unidad-titulo">UNIDAD 3</div>
-          <div class="unidad-subtitulo">PROGRAMACIÓN</div>
-
-          <div class="unidad-meta">
-            <div class="temas-badge">4/5 TEMAS</div>
-            <div class="estrellas" aria-label="Valoración 4 de 5">
-              <span class="star filled">⭐</span>
-              <span class="star filled">⭐</span>
-              <span class="star filled">⭐</span>
-              <span class="star filled">⭐</span>
-              <span class="star empty">☆</span>
-              <span class="score-badge">[4.0]</span>
+            <div class="header-actions">
+                <a href="index.html" class="btn-volver" aria-label="Regresar al inicio">← REGRESAR AL INICIO</a>
             </div>
-          </div>
-        </div>
+        </header>
 
-        <div class="btn-entrar" role="button">ENTRAR →</div>
-      </a>
-    </section>
+        <!-- INFORMACIÓN PERSONAL (MAYÚSCULAS, etiquetas verde neón) -->
+        <section class="info-estudiante" aria-label="Información del estudiante">
+            <p><span class="label">NOMBRE:</span> <span class="value">AXEL ARIAS</span></p>
+            <p><span class="label">EDAD:</span> <span class="value">19 AÑOS</span></p>
+            <p><span class="label">OCUPACIÓN:</span> <span class="value">ESTUDIANTE DE LA UTC</span></p>
+            <p><span class="label">UBICACIÓN:</span> <span class="value">QUITO - PICHINCHA</span></p>
+            <p><span class="label">CORREO:</span> <span class="value">ARIASTWD16@GMAIL.COM</span></p>
+        </section>
 
-    <!-- REDES SOCIALES -->
-    <section class="seccion-redes" aria-label="Redes sociales">
-      <h2>MIS REDES SOCIALES</h2>
-      <div class="redes-lista">
-        <a class="social-link instagram" href="https://www.instagram.com/axel._xdxd?igsh=MTh3YTdsZ2hjNGI5MA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Axel">
-          <span aria-hidden="true">📷</span> INSTAGRAM
-        </a>
+        <!-- SECCIÓN DE UNIDADES (mantengo tu diseño gamer previo) -->
+        <section class="seccion-unidades" aria-label="Unidades de estudio">
+            <a href="unidad-1.html" class="unidad-link u1" aria-label="Entrar a Unidad 1">
+                <div>
+                    <div class="icono-unidad">💻</div>
+                    <div class="unidad-titulo">UNIDAD 1</div>
+                    <div class="unidad-subtitulo">ESTRUCTURA Y FUNCIONAMIENTO DEL COMPUTADOR</div>
+                </div>
+                <div class="btn-entrar">ENTRAR →</div>
+            </a>
 
-        <a class="social-link tiktok" href="https://www.tiktok.com/@axel_t17?_r=1&_t=ZS-98h3KBIYTcw" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Axel">
-          <span aria-hidden="true">🎵</span> TIKTOK
-        </a>
-      </div>
-    </section>
+            <a href="unidad-2.html" class="unidad-link u2" aria-label="Entrar a Unidad 2">
+                <div>
+                    <div class="icono-unidad">📊</div>
+                    <div class="unidad-titulo">UNIDAD 2</div>
+                    <div class="unidad-subtitulo">ALGORITMOS, DIAGRAMAS DE FLUJO Y PSEUDOCÓDIGO</div>
+                </div>
+                <div class="btn-entrar">ENTRAR →</div>
+            </a>
 
-    <footer>
-      <div style="font-weight:900">AXEL ARIAS</div>
-      <div style="opacity:0.8">Universidad Técnica de Cotopaxi • Nivelación • Ingeniería en Software</div>
-    </footer>
+            <a href="unidad-3.html" class="unidad-link u3" aria-label="Entrar a Unidad 3">
+                <div>
+                    <div class="icono-unidad">🐍</div>
+                    <div class="unidad-titulo">UNIDAD 3</div>
+                    <div class="unidad-subtitulo">PROGRAMACIÓN</div>
+                </div>
+                <div class="btn-entrar">ENTRAR →</div>
+            </a>
+        </section>
+
+        <!-- REDES SOCIALES -->
+        <section class="seccion-redes" aria-label="Redes sociales">
+            <h2>MIS REDES SOCIALES</h2>
+            <div class="redes-lista">
+                <a class="social-link instagram" href="https://www.instagram.com/axel._xdxd?igsh=MTh3YTdsZ2hjNGI5MA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Axel">📷 INSTAGRAM</a>
+                <a class="social-link tiktok" href="https://www.tiktok.com/@axel_t17?_r=1&_t=ZS-98h3KBIYTcw" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Axel">🎵 TIKTOK</a>
+            </div>
+        </section>
+
+        <footer>
+            <div style="font-weight:900">AXEL ARIAS</div>
+            <div style="opacity:0.8">Universidad Técnica de Cotopaxi • Nivelación • Ingeniería en Software</div>
+        </footer>
+    </main>
+</body>
+</html>
   </main>
 </body>
 </html>
