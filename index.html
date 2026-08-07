@@ -13,12 +13,10 @@
             --color-acento: #00e676;
             --color-hover: #00c853;
             --borde: #333;
-            --gold: #D4AF37;
-            --accent-color: #3498db;
-            --primary-color: #2c3e50;
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
-            --text-color: #333333;
+            --azul-utc: #003399;
+            --rojo-utc: #E50914;
+            --neon: #00FF66;
+            --gold: #FFD700;
         }
 
         body {
@@ -78,9 +76,13 @@
 
         .foto-perfil-container:hover .foto-perfil { transform: scale(1.06); }
 
-        .info-institucion p { margin: 0; opacity: 0.85; }
-        .info-institucion h1 { margin: 6px 0 4px 0; font-size: 1.6rem; }
-        .info-institucion h1 strong { color: var(--color-acento); }
+        .info-institucion { text-transform: uppercase; }
+        .info-institucion p { margin: 0; opacity: 0.95; font-weight: 600; }
+        .info-institucion .subtitle { margin-top: 6px; font-size: 1rem; opacity: 0.85; font-weight: 600; }
+        .info-institucion h1 { margin: 6px 0 4px 0; font-size: 1.6rem; line-height: 1.05; }
+        .info-institucion .uni { color: var(--azul-utc); }
+        .info-institucion .tecnica { color: #FFFFFF; }
+        .info-institucion .cotopaxi { color: var(--rojo-utc); }
 
         /* Información personal de Axel */
         .info-estudiante {
@@ -89,10 +91,12 @@
             border-radius: 15px;
             border: 1px solid var(--borde);
             color: var(--texto-principal);
+            text-transform: uppercase;
         }
 
         .info-estudiante p { margin: 10px 0; display: flex; align-items: center; gap: 10px; }
-        .info-estudiante b { color: white; min-width: 100px; display: inline-block; }
+        .info-estudiante .label { color: var(--neon); font-weight: 800; min-width: 120px; display: inline-block; }
+        .info-estudiante .value { color: var(--texto-principal); font-weight: 700; }
         .icon { color: var(--color-acento); font-size: 1.1rem; }
 
         /* Unidades como tarjetas */
@@ -117,9 +121,6 @@
         .btn-entrar { font-size: 0.95rem; font-weight: 700; color: var(--color-acento); }
         .unidad-link:hover .btn-entrar { color: white; background-color: var(--color-acento); padding: 8px 18px; border-radius: 20px; }
 
-        /* Mantengo estilos de ejemplos para compatibilidad si los usas en otras páginas */
-        .unidad-link .examples { display:none; }
-
         footer { color: var(--texto-principal); text-align: center; margin: 30px 0 10px; }
 
         /* Responsive */
@@ -138,20 +139,19 @@
             </div>
 
             <div class="info-institucion">
-                <p style="letter-spacing:1px; font-weight:600;">PORTAFOLIO ACADÉMICO</p>
-                <h1>Universidad Técnica<br><strong>de Cotopaxi</strong></h1>
-                <p>Ingeniería en Software · Nivelación</p>
-                <p style="margin-top:8px; opacity:0.8;">Portafolio de: <strong style="color:var(--color-acento);">Axel Arias</strong></p>
+                <p style="letter-spacing:1px;">PORTAFOLIO DE: <span style="color:var(--neon); font-weight:800;">AXEL ARIAS</span></p>
+                <h1><span class="uni">UNIVERSIDAD</span> <span class="tecnica">TÉCNICA</span><br><span class="cotopaxi">DE COTOPAXI</span></h1>
+                <p class="subtitle">INGENIERÍA EN SOFTWARE - NIVELACIÓN</p>
             </div>
         </header>
 
         <!-- SECCIÓN: Datos del Estudiante (solo información de Axel Arias) -->
         <section class="info-estudiante" aria-label="Información del estudiante">
-            <p><span class="icon">👤</span><b>Nombre:</b> Axel Arias</p>
-            <p><span class="icon">🎂</span><b>Edad:</b> 19 años</p>
-            <p><span class="icon">🎓</span><b>Ocupación:</b> Estudiante de la UTC</p>
-            <p><span class="icon">📍</span><b>Ubicación:</b> Quito - Pichincha</p>
-            <p style="margin-top:10px; opacity:0.9;">Bienvenido a mi portafolio académico. Aquí encontrarás las unidades, calificaciones y proyectos desarrollados durante el curso.</p>
+            <p><span class="icon">👤</span><span class="label">NOMBRE:</span> <span class="value">AXEL ARIAS</span></p>
+            <p><span class="icon">🎂</span><span class="label">EDAD:</span> <span class="value">19 AÑOS</span></p>
+            <p><span class="icon">🎓</span><span class="label">OCUPACIÓN:</span> <span class="value">ESTUDIANTE DE LA UTC</span></p>
+            <p><span class="icon">📍</span><span class="label">UBICACIÓN:</span> <span class="value">QUITO - PICHINCHA</span></p>
+            <p><span class="icon">✉️</span><span class="label">CORREO:</span> <span class="value">ARIASTWD16@GMAIL.COM</span></p>
         </section>
 
         <!-- SECCIÓN: Enlaces a Unidades (limpias y parejas) -->
@@ -186,8 +186,6 @@
                 <div class="btn-entrar">Entrar →</div>
             </a>
         </section>
-
-        <!-- Se eliminaron las tarjetas resumen inferiores por solicitud del autor. -->
 
         <footer>
             <h3 style="margin:6px 0 4px 0; color:var(--color-acento);">Axel Arias</h3>
