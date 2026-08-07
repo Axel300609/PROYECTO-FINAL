@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unidad 2 - Algoritmos, Diagramas de Flujo y Pseudocódigo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>UNIDAD 2 - ALGORITMOS, DIAGRAMAS DE FLUJO Y PSEUDOCÓDIGO</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --fondo-oscuro: #121212;
@@ -12,10 +16,14 @@
             --color-acento: #00e676;
             --color-hover: #00c853;
             --borde: #333;
+            --gold: #FFD700;
+            --gold-dark: #D4AF37;
         }
 
+        /* Tipografía base */
+        html, body { height: 100%; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--fondo-oscuro);
             color: var(--texto-principal);
             margin: 0;
@@ -23,6 +31,8 @@
             display: flex;
             justify-content: center;
             min-height: 100vh;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
         }
 
         main {
@@ -34,66 +44,82 @@
             gap: 30px;
         }
 
+        /* Encabezado */
         header {
             background-color: var(--fondo-tarjeta);
             padding: 30px;
             border-radius: 15px;
             border: 1px solid var(--borde);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 22px rgba(0,0,0,0.6);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.8rem;
-            color: var(--color-acento);
+            font-size: 1.9rem;
+            color: var(--texto-principal);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        /* Botón regresar con degradado dorado y texto en MAYÚSCULAS */
         .btn-volver {
-            background-color: var(--color-acento);
-            color: #000;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
             display: inline-block;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 28px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: #000;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            box-shadow: 0 8px 30px rgba(212,175,55,0.18), 0 2px 6px rgba(0,0,0,0.6);
+            border: 1px solid rgba(0,0,0,0.25);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
         }
 
         .btn-volver:hover {
-            background-color: var(--color-hover);
-            transform: scale(1.05);
+            transform: translateY(-4px) scale(1.02);
+            filter: brightness(1.03);
+            box-shadow: 0 14px 40px rgba(212,175,55,0.22);
         }
 
+        /* Contenido principal */
         .contenido {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 22px;
         }
 
         .tema {
             background-color: var(--fondo-tarjeta);
-            padding: 25px;
-            border-radius: 15px;
+            padding: 22px;
+            border-radius: 14px;
             border: 1px solid var(--borde);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            transition: all 0.28s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.55);
         }
 
         .tema:hover {
             border-color: var(--color-acento);
-            box-shadow: 0 8px 24px rgba(0,230,118,0.12);
-            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(0,230,118,0.06);
+            transform: translateY(-6px);
         }
 
         .tema h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.15rem;
             color: var(--color-acento);
-            margin: 0 0 15px 0;
-            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -101,58 +127,88 @@
 
         .tema p {
             margin: 0;
-            line-height: 1.6;
-            opacity: 0.9;
+            line-height: 1.65;
+            opacity: 0.95;
+            font-weight: 400;
+            color: var(--texto-principal);
         }
+
+        /* Ejemplo resaltado */
+        .ejemplo {
+            margin-top: 12px;
+            background: rgba(255,255,255,0.02);
+            padding: 12px 14px;
+            border-left: 4px solid var(--color-acento);
+            border-radius: 8px;
+            font-size: 0.98rem;
+            color: var(--texto-principal);
+        }
+
+        .ejemplo strong { display:inline-block; margin-right:6px; color:var(--texto-principal); font-weight:700; }
 
         footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 20px;
+            margin-top: 18px;
+            padding: 18px;
             border-top: 1px solid var(--borde);
-            opacity: 0.8;
+            opacity: 0.85;
+            font-size: 0.95rem;
         }
 
+        /* Responsive */
         @media (max-width: 700px) {
             header {
                 flex-direction: column;
-                gap: 20px;
+                gap: 18px;
                 text-align: center;
             }
 
-            header h1 {
-                font-size: 1.4rem;
-            }
+            header h1 { font-size: 1.35rem; }
+            .tema h2 { font-size: 1.05rem; }
         }
     </style>
 </head>
 <body>
     <main>
         <header>
-            <h1>📊 Unidad 2: Algoritmos, Diagramas de Flujo y Pseudocódigo</h1>
-            <a href="index.html" class="btn-volver">← Regresar al inicio</a>
+            <h1>🧠 UNIDAD 2: ALGORITMOS, DIAGRAMAS DE FLUJO Y PSEUDOCÓDIGO</h1>
+            <a href="index.html" class="btn-volver" aria-label="Regresar al inicio">← REGRESAR AL INICIO</a>
         </header>
 
-        <section class="contenido">
-            <div class="tema">
-                <h2>🔧 Algoritmos y sus Características</h2>
-                <p>Secuencia ordenada, precisa y finita de instrucciones estructuradas para dar solución a un problema o procesar un conjunto determinado de datos. Un algoritmo efectivo debe ser determinista (produce el mismo resultado con las mismas entradas), eficiente en términos de tiempo y recursos, y debe estar bien definido con instrucciones claras que cualquier persona pueda seguir. Los algoritmos son la base de la programación y se encuentran en todos los procesos computacionales.</p>
+        <section class="contenido" aria-label="Contenido Unidad 2">
+
+            <div class="tema" id="algoritmos-caracteristicas">
+                <h2>🔁 ALGORITMOS Y SUS CARACTERÍSTICAS</h2>
+                <p>
+                    Un algoritmo es una secuencia finita de pasos bien definidos para resolver un problema o realizar una tarea específica. Debe ser claro, finito y efectivo.
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> La secuencia exacta para calcular un promedio: pedir las notas, sumarlas todas, dividirlas entre la cantidad de notas y mostrar el resultado final.</div>
             </div>
 
-            <div class="tema">
-                <h2>📈 Diagramas de Flujo</h2>
-                <p>Representación esquemática y gráfica de la secuencia de pasos de un algoritmo a través de una simbología geométrica estandarizada. Los diagramas de flujo utilizan formas como rectángulos para procesos, rombos para decisiones, óvalos para inicio/fin, y flechas para indicar el flujo. Son herramientas visuales poderosas que permiten comunicar algoritmos de manera clara y facilitan la identificación de errores lógicos antes de la implementación en código.</p>
+            <div class="tema" id="diagramas-flujo">
+                <h2>🔀 DIAGRAMAS DE FLUJO</h2>
+                <p>
+                    Representación gráfica de un algoritmo usando símbolos (óvalo para inicio/fin, rectángulo para procesos, rombo para decisiones, flechas para flujo).
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Un diagrama con un rombo que pregunta "¿EDAD ≥ 18?": si SÍ → flecha a rectángulo "PERMITIR ENTRADA"; si NO → flecha a rectángulo "DENEGAR ENTRADA".</div>
             </div>
 
-            <div class="tema">
-                <h2>💬 Pseudocódigo</h2>
-                <p>Lenguaje de especificación de algoritmos que utiliza palabras en lenguaje natural combinadas con estructuras sintácticas propias de la programación. El pseudocódigo es independiente del lenguaje de programación específico, permitiendo que programadores de diferentes especialidades entiendan el algoritmo sin necesidad de conocer la sintaxis exacta de un lenguaje particular. Es una herramienta intermedia entre la descripción verbal y el código ejecutable.</p>
+            <div class="tema" id="pseudocodigo">
+                <h2>📝 PSEUDOCÓDIGO</h2>
+                <p>
+                    Forma intermedia entre lenguaje natural y lenguaje de programación que usa instrucciones ordenadas y fáciles de convertir a código.
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> SI calificacion >= 7 ENTONCES mostrar "APROBADO" SINO mostrar "REPROBADO".</div>
             </div>
 
-            <div class="tema">
-                <h2>🎯 Modelado de Problemas</h2>
-                <p>Proceso de análisis y abstracción que transforma un problema del mundo real en una representación formal mediante variables, operaciones y flujos lógicos aptos para su procesamiento en un ordenador. El modelado de problemas implica identificar datos de entrada, procesos necesarios, datos de salida esperados, y las relaciones entre ellos. Es un paso crítico que requiere comprensión profunda del problema antes de diseñar cualquier solución algorítmica.</p>
+            <div class="tema" id="modelado-problemas">
+                <h2>🧩 MODELADO DE PROBLEMAS</h2>
+                <p>
+                    Proceso de descomponer y estructurar un problema para diseñar soluciones: identificar entradas, salidas, reglas y pasos necesarios para resolverlo.
+                </p>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Al modelar un cajero automático: pedir tarjeta y clave → verificar clave → si coincide, pedir monto y entregar dinero; si no coincide, mostrar error y solicitar reintento.</div>
             </div>
+
         </section>
 
         <footer>
