@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 - Programación</title>
+    <style>
+        :root {
+            --fondo-oscuro: #121212;
+            --fondo-tarjeta: #1e1e1e;
+            --texto-principal: #e0e0e0;
+            --color-acento: #00e676;
+            --color-hover: #00c853;
+            --borde: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--fondo-oscuro);
+            color: var(--texto-principal);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        main {
+            width: 92%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        header {
+            background-color: var(--fondo-tarjeta);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--borde);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--color-acento);
+        }
+
+        .btn-volver {
+            background-color: var(--color-acento);
+            color: #000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--color-hover);
+            transform: scale(1.05);
+        }
+
+        .contenido {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tema {
+            background-color: var(--fondo-tarjeta);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--borde);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        .tema:hover {
+            border-color: var(--color-acento);
+            box-shadow: 0 8px 24px rgba(0,230,118,0.12);
+            transform: translateY(-4px);
+        }
+
+        .tema h2 {
+            color: var(--color-acento);
+            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tema p {
+            margin: 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid var(--borde);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>🐍 Unidad 3: Programación</h1>
+            <a href="index.html" class="btn-volver">← Regresar al inicio</a>
+        </header>
+
+        <section class="contenido">
+            <div class="tema">
+                <h2>📚 Lenguajes y Paradigmas de Programación</h2>
+                <p>Los lenguajes son conjuntos de símbolos y reglas sintácticas para escribir instrucciones; los paradigmas representan los enfoques o filosofías teóricas que determinan cómo se organiza la estructura y el comportamiento del software. Existen paradigmas como programación imperativa (enfocada en cómo hacer algo), programación declarativa (enfocada en qué hacer), programación orientada a objetos (basada en objetos y clases), y programación funcional (basada en funciones matemáticas). Cada paradigma tiene fortalezas específicas para diferentes tipos de problemas.</p>
+            </div>
+
+            <div class="tema">
+                <h2>🐍 Introducción a la Programación en Python</h2>
+                <p>Aplicación de la sintaxis, tipos de datos e instrucciones elementales del lenguaje Python para la elaboración y ejecución de programas informáticos. Python es un lenguaje versátil y accesible que destaca por su sintaxis clara y legible. Incluye conceptos como variables, tipos de datos primitivos (enteros, flotantes, cadenas, booleanos), asignación de valores, entrada/salida básica, y estructuras de control fundamentales. Python es ideal para aprender conceptos de programación debido a su curva de aprendizaje suave.</p>
+            </div>
+
+            <div class="tema">
+                <h2>⚡ Operadores Algebraicos, Relacionales y Lógicos</h2>
+                <p>Símbolos diseñados para ejecutar operaciones específicas sobre variables. Operadores Algebraicos realizan operaciones aritméticas básicas (suma +, resta -, multiplicación *, división /, módulo %, potencia **). Operadores Relacionales validan relaciones de orden o equivalencia entre valores (igual ==, diferente !=, mayor >, menor &lt;, mayor o igual >=, menor o igual &lt;=). Operadores Lógicos combinan expresiones verdaderas o falsas mediante reglas booleanas (AND, OR, NOT). Estos operadores son fundamentales para construir expresiones complejas y tomar decisiones en programas.</p>
+            </div>
+
+            <div class="tema">
+                <h2>🔀 Estructuras de Control Condicionales</h2>
+                <p>Instrucciones que evalúan una condición lógica para determinar qué bloque de código ejecutar. Las estructuras condicionales incluyen la sentencia if (si la condición es verdadera, ejecuta el bloque), if-else (ejecuta un bloque u otro según la condición), if-elif-else (evalúa múltiples condiciones en secuencia), y operador ternario (sintaxis compacta para condiciones simples). Estas estructuras permiten que los programas tomen decisiones y ejecuten diferentes caminos según las circunstancias, siendo esenciales para crear lógica flexible y adaptativa.</p>
+            </div>
+
+            <div class="tema">
+                <h2>🔁 Estructuras de Control Repetitivas</h2>
+                <p>Bloques de código encargados de iterar una serie de instrucciones un número determinado de veces o mientras se mantenga cierta condición. Las estructuras repetitivas incluyen el bucle for (itera un número específico de veces o sobre elementos de una colección), el bucle while (itera mientras se cumpla una condición), y sentencias de control de flujo como break (termina el bucle) y continue (salta a la siguiente iteración). Estas estructuras son vitales para automatizar tareas repetitivas, procesar colecciones de datos y crear algoritmos eficientes que evitan código redundante.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Portafolio Académico de Axel Arias • Universidad Técnica de Cotopaxi</p>
+        </footer>
+    </main>
+</body>
+</html>
