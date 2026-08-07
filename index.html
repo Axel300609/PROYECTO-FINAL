@@ -175,7 +175,7 @@
         .unidad-link{
             display:flex;flex-direction:column;justify-content:space-between;align-items:center;
             text-decoration:none;color:var(--text);
-            min-height:320px;padding:22px;border-radius:12px;background:var(--card-bg);
+            min-height:380px;padding:22px;border-radius:12px;background:var(--card-bg);
             border:2px solid transparent;position:relative;overflow:visible;
             transition: transform .22s ease, box-shadow .22s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
@@ -185,10 +185,47 @@
         .unidad-link.u2{ box-shadow: 0 12px 46px rgba(0,255,102,0.08); border-image: linear-gradient(90deg,var(--neon-verde),#00E676) 1; }
         .unidad-link.u3{ box-shadow: 0 12px 46px rgba(255,215,0,0.08); border-image: linear-gradient(90deg,var(--neon-gold),#FFC107) 1; }
 
-        .unidad-titulo{ font-weight:900; font-size:1.02rem; text-transform:uppercase; letter-spacing:0.8px; }
-        .unidad-subtitulo{ font-weight:800; font-size:0.92rem; opacity:0.95; text-transform:uppercase; margin-top:6px; }
+        .unidad-titulo{ font-weight:900; font-size:1.02rem; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
+        .unidad-subtitulo{ font-weight:800; font-size:0.92rem; opacity:0.95; text-transform:uppercase; margin-top:6px; margin-bottom:16px; }
 
         .icono-unidad{ font-size:2.8rem; margin-bottom:8px; }
+
+        /* Estilos para estrellas y puntuación */
+        .unidad-puntuacion {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0 16px 0;
+            width: 100%;
+        }
+
+        .estrellas {
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: var(--neon-gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .contador-temas {
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: var(--neon-verde);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nota-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+            border: 1px solid var(--neon-gold);
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-weight: 900;
+            font-size: 0.9rem;
+            color: var(--neon-gold);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
+        }
 
         .btn-entrar{
             padding:10px 22px;border-radius:999px;font-weight:900;text-transform:uppercase;
@@ -216,10 +253,13 @@
             header{ flex-direction:column; align-items:center; text-align:center; gap:12px; padding:20px; }
             .foto-perfil{ width:140px; height:140px; font-size:44px; }
             .info-estudiante .label{ min-width:110px; }
+            .unidad-link{ min-height:360px; }
         }
         @media (max-width:520px){
             .foto-perfil{ width:120px; height:120px; font-size:36px; }
             .info-estudiante p{ font-size:0.92rem }
+            .estrellas{ font-size:1.2rem; }
+            .unidad-link{ min-height:340px; }
         }
     </style>
 </head>
@@ -258,29 +298,53 @@
 
         <!-- SECCIÓN DE UNIDADES (mantengo tu diseño gamer previo) -->
         <section class="seccion-unidades" aria-label="Unidades de estudio">
+            <!-- UNIDAD 1 -->
             <a href="unidad-1.html" class="unidad-link u1" aria-label="Entrar a Unidad 1">
                 <div>
                     <div class="icono-unidad">💻</div>
                     <div class="unidad-titulo">UNIDAD 1</div>
                     <div class="unidad-subtitulo">ESTRUCTURA Y FUNCIONAMIENTO DEL COMPUTADOR</div>
+                    
+                    <!-- Puntuación, Estrellas y Contador -->
+                    <div class="unidad-puntuacion">
+                        <div class="estrellas">⭐⭐⭐⭐☆</div>
+                        <div class="contador-temas">4/5 TEMAS</div>
+                        <div class="nota-badge">[4.0]</div>
+                    </div>
                 </div>
                 <div class="btn-entrar">ENTRAR →</div>
             </a>
 
+            <!-- UNIDAD 2 -->
             <a href="unidad-2.html" class="unidad-link u2" aria-label="Entrar a Unidad 2">
                 <div>
                     <div class="icono-unidad">📊</div>
                     <div class="unidad-titulo">UNIDAD 2</div>
                     <div class="unidad-subtitulo">ALGORITMOS, DIAGRAMAS DE FLUJO Y PSEUDOCÓDIGO</div>
+                    
+                    <!-- Puntuación, Estrellas y Contador -->
+                    <div class="unidad-puntuacion">
+                        <div class="estrellas">⭐⭐⭐☆☆</div>
+                        <div class="contador-temas">3/5 TEMAS</div>
+                        <div class="nota-badge">[3.0]</div>
+                    </div>
                 </div>
                 <div class="btn-entrar">ENTRAR →</div>
             </a>
 
+            <!-- UNIDAD 3 -->
             <a href="unidad-3.html" class="unidad-link u3" aria-label="Entrar a Unidad 3">
                 <div>
                     <div class="icono-unidad">🐍</div>
                     <div class="unidad-titulo">UNIDAD 3</div>
                     <div class="unidad-subtitulo">PROGRAMACIÓN</div>
+                    
+                    <!-- Puntuación, Estrellas y Contador -->
+                    <div class="unidad-puntuacion">
+                        <div class="estrellas">⭐⭐⭐⭐☆</div>
+                        <div class="contador-temas">4/5 TEMAS</div>
+                        <div class="nota-badge">[4.0]</div>
+                    </div>
                 </div>
                 <div class="btn-entrar">ENTRAR →</div>
             </a>
