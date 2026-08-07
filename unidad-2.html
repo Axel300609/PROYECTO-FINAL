@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2 - Algoritmos, Diagramas de Flujo y Pseudocódigo</title>
+    <style>
+        :root {
+            --fondo-oscuro: #121212;
+            --fondo-tarjeta: #1e1e1e;
+            --texto-principal: #e0e0e0;
+            --color-acento: #00e676;
+            --color-hover: #00c853;
+            --borde: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--fondo-oscuro);
+            color: var(--texto-principal);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        main {
+            width: 92%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        header {
+            background-color: var(--fondo-tarjeta);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--borde);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--color-acento);
+        }
+
+        .btn-volver {
+            background-color: var(--color-acento);
+            color: #000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--color-hover);
+            transform: scale(1.05);
+        }
+
+        .contenido {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tema {
+            background-color: var(--fondo-tarjeta);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--borde);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        .tema:hover {
+            border-color: var(--color-acento);
+            box-shadow: 0 8px 24px rgba(0,230,118,0.12);
+            transform: translateY(-4px);
+        }
+
+        .tema h2 {
+            color: var(--color-acento);
+            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tema p {
+            margin: 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid var(--borde);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>📊 Unidad 2: Algoritmos, Diagramas de Flujo y Pseudocódigo</h1>
+            <a href="index.html" class="btn-volver">← Regresar al inicio</a>
+        </header>
+
+        <section class="contenido">
+            <div class="tema">
+                <h2>🔧 Algoritmos y sus Características</h2>
+                <p>Secuencia ordenada, precisa y finita de instrucciones estructuradas para dar solución a un problema o procesar un conjunto determinado de datos. Un algoritmo efectivo debe ser determinista (produce el mismo resultado con las mismas entradas), eficiente en términos de tiempo y recursos, y debe estar bien definido con instrucciones claras que cualquier persona pueda seguir. Los algoritmos son la base de la programación y se encuentran en todos los procesos computacionales.</p>
+            </div>
+
+            <div class="tema">
+                <h2>📈 Diagramas de Flujo</h2>
+                <p>Representación esquemática y gráfica de la secuencia de pasos de un algoritmo a través de una simbología geométrica estandarizada. Los diagramas de flujo utilizan formas como rectángulos para procesos, rombos para decisiones, óvalos para inicio/fin, y flechas para indicar el flujo. Son herramientas visuales poderosas que permiten comunicar algoritmos de manera clara y facilitan la identificación de errores lógicos antes de la implementación en código.</p>
+            </div>
+
+            <div class="tema">
+                <h2>💬 Pseudocódigo</h2>
+                <p>Lenguaje de especificación de algoritmos que utiliza palabras en lenguaje natural combinadas con estructuras sintácticas propias de la programación. El pseudocódigo es independiente del lenguaje de programación específico, permitiendo que programadores de diferentes especialidades entiendan el algoritmo sin necesidad de conocer la sintaxis exacta de un lenguaje particular. Es una herramienta intermedia entre la descripción verbal y el código ejecutable.</p>
+            </div>
+
+            <div class="tema">
+                <h2>🎯 Modelado de Problemas</h2>
+                <p>Proceso de análisis y abstracción que transforma un problema del mundo real en una representación formal mediante variables, operaciones y flujos lógicos aptos para su procesamiento en un ordenador. El modelado de problemas implica identificar datos de entrada, procesos necesarios, datos de salida esperados, y las relaciones entre ellos. Es un paso crítico que requiere comprensión profunda del problema antes de diseñar cualquier solución algorítmica.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Portafolio Académico de Axel Arias • Universidad Técnica de Cotopaxi</p>
+        </footer>
+    </main>
+</body>
+</html>
