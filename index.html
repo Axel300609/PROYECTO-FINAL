@@ -128,25 +128,19 @@
         .titulo-universidad .u-tecnica{ color: #FFFFFF; padding-right:6px; }
         .titulo-universidad .u-cotopaxi{ color: var(--neon-rojo); }
 
+        /* Logo de la universidad alineado a la derecha */
+        .logo-universidad {
+            width:120px;
+            height:120px;
+            object-fit:contain;
+            flex-shrink:0;
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+        }
+
         .subtitle{ font-weight:800; opacity:0.85; font-size:0.98rem; letter-spacing:0.6px; text-transform:uppercase; }
 
-        /* Botón volver en el extremo derecho del header */
+        /* Header actions - ahora vacío pero se mantiene para estructura */
         .header-actions{ margin-left:auto; display:flex; gap:12px; align-items:center; }
-        .btn-volver {
-            display:inline-block;
-            text-decoration:none;
-            padding:12px 22px;
-            border-radius:28px;
-            font-weight:800;
-            font-size:0.95rem;
-            text-transform:uppercase;
-            color:#000;
-            background: linear-gradient(135deg, var(--neon-gold) 0%, #FFC107 100%);
-            box-shadow: 0 12px 40px rgba(255,215,0,0.12);
-            border:1px solid rgba(0,0,0,0.22);
-            transition: transform .16s ease, filter .16s ease;
-        }
-        .btn-volver:hover{ transform: translateY(-4px) scale(1.02); filter:brightness(1.03); }
 
         /* ===== TARJETA DE INFORMACIÓN PERSONAL =====
            - etiquetas en verde neón
@@ -218,10 +212,10 @@
         .btn-entrar:hover{ transform: translateY(-3px) scale(1.02); filter:brightness(1.04); }
 
         /* redes */
-        .seccion-redes{ display:flex; flex-direction:column; gap:12px; align-items:center; padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.03); }
+        .seccion-redes{ display:flex; flex-direction:column; gap:12px; align-items:center; padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
         .seccion-redes h2{ margin:0; font-size:1rem; font-weight:900; text-transform:uppercase; color:var(--neon-fucsia); }
         .redes-lista{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; align-items:center; width:100% }
-        .social-link{ min-width:220px; display:inline-flex; gap:12px; align-items:center; justify-content:center; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:900; text-transform:uppercase; color:var(--text); background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:2px solid rgba(255,255,255,0.02); transition: transform .16s ease; }
+        .social-link{ min-width:220px; display:inline-flex; gap:12px; align-items:center; justify-content:center; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:900; text-transform:uppercase; font-size:0.9rem; letter-spacing:0.5px; border:2px solid transparent; transition: transform .16s ease, box-shadow .16s ease; background:var(--card-bg); }
         .social-link.instagram{ border-image: linear-gradient(90deg,#f58529,#dd2a7b,#8134af) 1; }
         .social-link.tiktok{ border-image: linear-gradient(90deg,#69C9D0,#EE1D52) 1; }
         .social-link:hover{ transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
@@ -233,10 +227,12 @@
             .titulo-universidad h1{ font-size:1.6rem; white-space:normal; } /* allow wrap on small screens to avoid overflow */
             header{ flex-direction:column; align-items:center; text-align:center; gap:12px; padding:20px; }
             .foto-perfil{ width:140px; height:140px; font-size:44px; }
+            .logo-universidad{ width:100px; height:100px; }
             .info-estudiante .label{ min-width:110px; }
         }
         @media (max-width:520px){
             .foto-perfil{ width:120px; height:120px; font-size:36px; }
+            .logo-universidad{ width:80px; height:80px; }
             .info-estudiante p{ font-size:0.92rem }
         }
     </style>
@@ -265,7 +261,7 @@
             </div>
 
             <div class="header-actions">
-                <a href="index.html" class="btn-volver" aria-label="Regresar al inicio">← REGRESAR AL INICIO</a>
+                <img src="https://universidades.ec/universidades/universidad-tecnica-de-cotopaxi" alt="Logo Universidad Técnica de Cotopaxi" class="logo-universidad" />
             </div>
         </header>
 
@@ -322,8 +318,5 @@
             <div style="opacity:0.8">Universidad Técnica de Cotopaxi • Nivelación • Ingeniería en Software</div>
         </footer>
     </main>
-</body>
-</html>
-  </main>
 </body>
 </html>
